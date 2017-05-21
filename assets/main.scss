@@ -21,8 +21,8 @@
 	float: left;
 }
 .home-content {
-	max-width: -webkit-calc(#{$content-width} + 400px - (#{$spacing-unit} * 2));
-	max-width:         calc(#{$content-width} + 400px - (#{$spacing-unit} * 2));
+	max-width: -webkit-calc(#{$content-width} + 450px - (#{$spacing-unit} * 2));
+	max-width:         calc(#{$content-width} + 450px - (#{$spacing-unit} * 2));
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -36,6 +36,7 @@
 	max-width: 160px;
 	border: solid #eee 0.2rem;
 	border-radius: 50%;
+	margin-bottom: 1.5rem;
 }
 
 .social-icons {
