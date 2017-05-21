@@ -1,0 +1,24 @@
+<div class="sidebar sticky">
+	<div class="avitar">
+		<img alt="{{ site.author }}" src="./assets/profile.jpg">
+	</div>
+	<div class="blurb">
+		<h3>{{ site.author }}</h3>
+		<p>I love write beautiful code</p>
+	</div>
+	<ul class="social-icons">
+		<li style="cursor:text"><i aria-hidden="true" class="fa fa-fw fa-map-marker"></i> Sydney, Australia</li>
+		<li>
+			<a href="https://twitter.com/{{ site.twitter_username }}" onclick="analytics.track('Clicked Author Twitter Link')" target="_blank"><i aria-hidden="true" class="fa fa-fw fa-twitter"></i> Twitter</a>
+		</li>
+		<li>
+			<a href="{{ site.linkedin_url }}" onclick="analytics.track('Clicked Author LinkedIn Link')" target="_blank"><i aria-hidden="true" class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+		</li>
+		<li>
+			<a href="https://github.com/{{ site.github_username }}" onclick="analytics.track('Clicked Author Github Link')" target="_blank"><i aria-hidden="true" class="fa fa-fw fa-github"></i> Github</a>
+		</li>
+		<li>
+			<a href="https://www.stackoverflow.com/users/{{ site.stackoverflow_username }}" onclick="analytics.track('Clicked Author Stackoverflow Link')" target="_blank"><i aria-hidden="true" class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Testing with underscore.js
+date: '2013-07-01T02:09:00.002-07:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2013-07-01T02:09:37.800-07:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-8351296058718548937
+blogger_orig_url: http://blog.stephenn.com/2013/07/testing-with-underscorejs.html
+---
+
+Underscore is an awesome functional javascript library but I think it needs a flush feature so we can easily test our applications that use it.<br /><br />A underscore.flush method would allow you to test the different cases without having to make your unit tests slow. This could work similar to angular.js's $httpBackend.flush().<br /><br />Heres an implementation of what I mean.<br /><br />https://gist.github.com/stephennancekivell/5899425

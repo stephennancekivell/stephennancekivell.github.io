@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Server updates: Automate it!'
+date: '2011-07-28T23:52:00.000-07:00'
+author: Stephen Nancekivell
+tags:
+- Linux
+- Server
+- Shell
+modified_time: '2011-07-29T00:30:47.676-07:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-7603591397438535365
+blogger_orig_url: http://blog.stephenn.com/2011/07/server-updates-automate-it.html
+---
+
+A Ubuntu automatic update script with email notifications.<br /><br />We all know that we should keep our systems up to date with security patches and whatnot. This is something that we&nbsp;don't&nbsp;thing about on desktop computers, our operating systems (windows/ubuntu) do it automatically for us, giving us popup notifications when these are ready.<br /><br />But on servers we never log in to get those notifications, as long as things keep running we&nbsp;don't&nbsp;care. You may get hacked one day and become extra&nbsp;vigilant&nbsp;for a while, but&nbsp;that's&nbsp;not going to last, were all lazy.<br /><br />So in the spirit of "automate everything" I've made this script to check if there are any updates on my&nbsp;Ubuntu&nbsp;server and notify me to apply them, via email. I could have the updates install on their own but they've been known to break things, and i'd rather be ready to fix it than of climbing a hill unable to log in.<br /><br /><blockquote>#!/bin/bash<br />PATH=$PATH:/home/me/bin<br />sudo apt-get update &gt; /dev/null<br />CUPDATE=`sudo apt-get --download-only --yes dist-upgrade`<br />if echo $CUPDATE | grep 'The following packages will be upgraded' &gt; /dev/null<br />then<br />&nbsp; &nbsp; &nbsp; &nbsp; GmailSend.py -u me.machine@gmail.com -p ###### -t me@gmail.com -s "server:update" -b "$CUPDATE"<br />fi</blockquote><div>edit the email addresses &amp; chuck that in ya crontab and your away.</div><br /><div><br /></div><div>Using <a href="https://github.com/stephennancekivell/GmailSend">GmailSend.py</a>&nbsp;(by me) to give email notifications.</div>

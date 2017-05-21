@@ -1,0 +1,63 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.social-media-list li {
+	display: inline-block;
+}
+
+.page-footer-copyright {
+	color: #555;
+}
+
+.sidebar {
+	position: sticky;
+	top: 1rem;
+	float: left;
+}
+.home-content {
+	max-width: -webkit-calc(#{$content-width} + 400px - (#{$spacing-unit} * 2));
+	max-width:         calc(#{$content-width} + 400px - (#{$spacing-unit} * 2));
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.clearfix {
+	clear: both;
+	color: #555;
+}
+
+.avitar img {
+	max-width: 160px;
+	border: solid #eee 0.2rem;
+	border-radius: 50%;
+}
+
+.social-icons {
+	margin-left: 0;
+}
+
+.blurb {
+	text-align: center;
+}
+
+.social-icons li {
+	list-style: none;
+}
+
+.social-icons li a {
+	color: inherit;
+}
+
+.social-icons .fa-linkedin-square {
+	color: #007bb6;
+}
+
+.social-icons .fa-twitter {
+	color: #007bb6;
+}
+
+.social-icons .fa-stack-overflow {
+	color: #fe7a15;
+}

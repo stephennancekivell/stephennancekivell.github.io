@@ -1,0 +1,12 @@
+---
+layout: post
+title: One click deploy, and rollback. From the shell!
+date: '2013-01-20T22:58:00.001-08:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2013-01-20T23:02:25.411-08:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-3496849506181139939
+blogger_orig_url: http://blog.stephenn.com/2013/01/one-click-deploy-and-rollback-from-shell.html
+---
+
+<br />Heres how I auto deploy my app, and how i roll back if something goes wrong.<br /><br />sh scripts/deploy.sh deploy<br />sh scripts/deploy.sh deploy rollback<br /><br />It couldnt be easier.<br /><br /><pre class="prettyprint lang-sh">#!/bin/bash<br /><br />TARGET=example.com<br />TARGET_BASE=/var/www/p<br />TARGET_ARCHIVE=$TARGET_BASE/analyse.tgz<br />TARGET_LOCATION=$TARGET_BASE/analyse<br /><br />case "$1" in<br /> deploy)<br />  echo "building"<br />  yeoman build<br />  if [ ! -d dist ];<br />  then<br />   echo "yeoman didnt build"<br />   exit 1<br />  fi<br />  cd dist<br />  tar -czf ../dist.tgz *<br />  cd ..<br /><br />  echo "backing up"<br />  ssh $TARGET << EOF<br />   if [ -f $TARGET_ARCHIVE ];<br />   then<br />    mv $TARGET_ARCHIVE $TARGET_ARCHIVE.1<br />   fi<br />EOF<br /><br />  echo "deploying"<br />  scp dist.tgz $TARGET:$TARGET_ARCHIVE<br /><br />  ssh $TARGET << EOF<br />   echo "cleaning old deployment"<br />   rm -rf $TARGET_LOCATION/*<br /><br />   echo "extracting new build"<br /><br />   if [ -f $TARGET_LOCATION ];<br />   then<br />    mkdir $TARGET_LOCATION<br />   fi<br />   tar xfz $TARGET_ARCHIVE -C $TARGET_LOCATION<br />EOF<br /><br />  ;;<br /> rollback)<br />  echo "rolling back"<br />  <br />  ssh $TARGET << EOF<br />   rm -rf $TARGET_LOCATION/*<br /><br />   mv $TARGET_ARCHIVE.1 $TARGET_ARCHIVE<br />   tar xfz $TARGET_ARCHIVE -C $TARGET_LOCATION<br /><br />EOF<br />  ;;<br /> *)<br />  echo "usage: $0 [deploy] [rollback]"<br />  ;;<br />esac<br />exit 0<br /></pre>

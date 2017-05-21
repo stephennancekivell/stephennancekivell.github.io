@@ -1,0 +1,12 @@
+---
+layout: post
+title: Adding version info to your javascript app
+date: '2013-01-20T23:16:00.000-08:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2013-01-20T23:16:40.198-08:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-5857026275403383035
+blogger_orig_url: http://blog.stephenn.com/2013/01/adding-version-info-to-your-javascript.html
+---
+
+When deploying apps is helpful to know exactly what version your looking at. Where it might be the one on your server that you deployed months ago or the version you have checked out on your development machine.<br /><br />With java / maven applications you can configure the maven jar plugin to append this information to the &nbsp;jar META-INF.<br />I havent found anything like this yet for javascript / angular.js but its easy to craft a script to append it like this.<br /><br /><pre class="prettyprint lang-sh">#!/bin/bash<br /><br />APP_NAME="analyseApp"<br />SHA=`git rev-parse HEAD`<br />DATE=`date`<br />VERSION_INFO="$APP_NAME.version={GIT_SHA:'$SHA',BUILD_DATE:'$DATE'};"<br />echo $VERSION_INFO >> app/scripts/analyse.js<br /></pre><br />Now its easy to check what the version is just look in the js file. This can even be accessed programatically from the application.

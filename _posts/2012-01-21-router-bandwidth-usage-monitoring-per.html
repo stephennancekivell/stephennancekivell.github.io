@@ -1,0 +1,12 @@
+---
+layout: post
+title: Router bandwidth usage monitoring per user.
+date: '2012-01-21T12:34:00.000-08:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2012-01-21T19:00:46.338-08:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-4309451827125031083
+blogger_orig_url: http://blog.stephenn.com/2012/01/router-bandwidth-usage-monitoring-per.html
+---
+
+My flat has a shared internet connection, and we have a bandwidth cap, If we go over our cap it costs us all extra money.<br /><br />There's this great little script <a href="http://code.google.com/p/wrtbwmon/">wrtbwmon</a>&nbsp;for <a href="http://www.dd-wrt.com/">DD-WRT</a>&nbsp;that shows total bandwidth usage. There are other projects that do a nicer job but they require different router firmware, that&nbsp;doesn't&nbsp;support my router.<br /><br />The main imitation&nbsp;of Wrtbwmon is that it&nbsp;doesn't&nbsp;show how usage is changing over time. If someone suddenly uses lots of our bandwidth cap I need to be able to tell them when it was. My solution to this is to dump the output from Wrtbwmon into a log. It'll be clumsy to work with, but hopefully I wont need to often.<br /><br />Using a&nbsp;similar&nbsp;approach I could create graphs of the per user bandwidth usage using a javascript graphing library, but for now this will do.<br /><br /><br />Heres my script which I have running from a cron job on the router.<br /><br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>#!/bin/sh<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>WRTBWMON=/tmp/wrtbwmon<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>DB=/tmp/usage.db<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>PUB=/tmp/www/usage.html<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>SEND=/tmp/wrtbwmon_send<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>$WRTBWMON update $DB peak<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>$WRTBWMON publish $DB $PUB<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>date &gt; $SEND<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>arp &gt;&gt; $SEND<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>cat $DB &gt;&gt; $SEND<br /><span class="Apple-tab-span" style="white-space: pre;"> </span>echo -e "\n" &gt;&gt; $SEND<br /><br /><span class="Apple-tab-span" style="white-space: pre;"> </span>cat $SEND | ssh me@logging-server "cat &gt;&gt; wrtbwmon/log"

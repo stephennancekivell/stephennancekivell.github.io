@@ -1,0 +1,12 @@
+---
+layout: post
+title: Problem with corrupt files and eCrypt.
+date: '2012-04-14T20:56:00.000-07:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2012-09-05T02:55:03.394-07:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-6203078028803214085
+blogger_orig_url: http://blog.stephenn.com/2012/04/problem-with-corrupt-files-and-ecrypt.html
+---
+
+<br /><br />I've&nbsp;been noticing some strange behaviour on my Ubuntu laptop lately. In Google Chrome I get logged out whenever I close the browser, even though set it to remember me. I've also seen a lot of these log messages from eCryptfs which encrypts my home directory.<br /><br /><br /><span style="font-family: 'Courier New', Courier, monospace; font-size: xx-small;">Apr 14 10:29:41 stephen-ThinkPad-T520 kernel: [170037.012495] Valid eCryptfs headers not found in file header region or xattr region, inode 524280</span><br /><span style="font-family: 'Courier New', Courier, monospace; font-size: xx-small;">Apr 14 10:29:41 stephen-ThinkPad-T520 kernel: [170037.012497] Either the lower file is not in a valid eCryptfs format, or the key could not be retrieved. Plaintext passthrough mode is not enabled; returning -EIO</span><br /><br /><br />I was&nbsp;concerned&nbsp;by these file system errors so did some digging and found the problem files by using "find -inum 524280". I found most of the files where to do with chrome, including&nbsp;chrome's&nbsp;local cookie store. This must have been why I was getting logged out. Seeing as these are temporary files I decided to delete them, chrome will re create them, and hopefully the new ones wont get corrupt or have any trouble with eCrypt again.<br /><br />Here is the script I used to search for all of the corrupt files.<br /><div><br /></div><div><span style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">grep "Valid eCryptfs headers not found" /var/log/syslog | cut -b 140- &gt; filestocheck</span></div><div><span style="font-family: 'Courier New', Courier, monospace; font-size: x-small;"><br /></span></div><div><span style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">for i in $( cat filestocheck ); do find /home/stephen -inum $i -print; done | sort</span></div><div><br /></div><div><br /></div>

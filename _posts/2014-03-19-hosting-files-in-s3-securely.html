@@ -1,0 +1,13 @@
+---
+layout: post
+title: Hosting Files In S3 Securely
+date: '2014-03-19T19:10:00.002-07:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2014-05-12T21:24:12.008-07:00'
+thumbnail: http://1.bp.blogspot.com/-SdR9F5B1D30/UypMxZ_XdaI/AAAAAAAABxs/RQ71RC9szAE/s72-c/Screen+Shot+2014-03-20+at+12.12.54+pm.png
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-5130594532519489441
+blogger_orig_url: http://blog.stephenn.com/2014/03/hosting-files-in-s3-securely.html
+---
+
+This post is about hosting files securely on amazon S3 and making those available through a web app. It can be a bit tricky to configure S3 through its various caches.<br /><br /><br />Setup the bucket with webapp user that can upload / download make links.<br /><br />First off we need to create a user in <a href="http://console.aws.amazon.com/iam">amazon IAM</a> for our webapp to login as. Do this through the console and take note of its ARN, use the keys to login.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-SdR9F5B1D30/UypMxZ_XdaI/AAAAAAAABxs/RQ71RC9szAE/s1600/Screen+Shot+2014-03-20+at+12.12.54+pm.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-SdR9F5B1D30/UypMxZ_XdaI/AAAAAAAABxs/RQ71RC9szAE/s1600/Screen+Shot+2014-03-20+at+12.12.54+pm.png" height="161" width="320" /></a></div><br />Next create the S3 bucket and configure it to only allow that user. This is done in the bucket policy as in the screenshot below. It would be nice if this could be done without code, but the IAM user doesnt show up in the list of users.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-rAWsODrsnUg/UypNK__czjI/AAAAAAAABx0/CGWUCy8ZwG0/s1600/Screen+Shot+2014-03-20+at+12.12.29+pm.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-rAWsODrsnUg/UypNK__czjI/AAAAAAAABx0/CGWUCy8ZwG0/s1600/Screen+Shot+2014-03-20+at+12.12.29+pm.png" height="163" width="320" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">Now you should be able to generate pre signed urls to provide short lived links users, as described in <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ShareObjectPreSignedURLJavaSDK.html">the amazon docs.</a></div>

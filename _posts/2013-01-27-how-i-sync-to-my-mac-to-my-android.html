@@ -1,0 +1,12 @@
+---
+layout: post
+title: How I Sync to my mac to my android.
+date: '2013-01-27T03:06:00.003-08:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2013-01-27T03:08:11.827-08:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-271710289671369526
+blogger_orig_url: http://blog.stephenn.com/2013/01/how-i-sync-to-my-mac-to-my-android.html
+---
+
+I used to use&nbsp;<a href="https://play.google.com/store/apps/details?id=com.bv.wifisync">SyncMe Wireless</a>&nbsp;but now I have a mac and SyncMe doesnt support the afp file sharing protocol. So I run a ssh server on the phone and use rsync over ssh to sync the folders. This is a different approach. Instead of the phone asking the computer when the files have changed. I run rsync from my computer which connects to the phone and does the update.<br /><br />To install ssh on the phone install <a href="https://play.google.com/store/apps/details?id=stericson.busybox">BusyBox</a>&nbsp;and&nbsp;<a href="https://play.google.com/store/apps/details?id=berserker.android.apps.sshdroid">SSHDroid</a><br /><br />To install rsync on the phone grab the binary <a href="http://adqmisc.googlecode.com/svn/trunk/androidutils/rsync/rsync-3.0.6-arm-softfloat-linux-gnueabi.gz">http://adqmisc.googlecode.com/  .. rsync.gz</a>&nbsp;(I put mine in /usr/local/bin)<br /><br /><br />When running rsync I had to add these options&nbsp;--modify-window=60 --no-perms --no-t

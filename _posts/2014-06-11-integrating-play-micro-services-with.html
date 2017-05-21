@@ -1,0 +1,12 @@
+---
+layout: post
+title: Integrating Play Micro Services With Shared Sessions Through Javascript
+date: '2014-06-11T00:04:00.001-07:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2014-06-12T06:08:24.571-07:00'
+blogger_id: tag:blogger.com,1999:blog-2519344180739427574.post-8258137002306808413
+blogger_orig_url: http://blog.stephenn.com/2014/06/integrating-play-micro-services-with.html
+---
+
+This post is about how to integrate sessions in <a href="http://www.playframework.com/">Play Framework</a> servers through javascript. Where you have two different servers (micro services) and you want to share the session between them.<br /><br />Because the session in play is just stored in a secured cookie the servers dont need to communicate, they just need the same encryption key application.secret usually in application.conf. This is used to sign the session cookie so if its changed the server rejects it.<br /><br />To access routes on a different domain you will need to enable CORS on the server (cors cross origin resource sharing), see the <a href="http://www.html5rocks.com/en/tutorials/cors/">html5rocks tutorial</a>&nbsp;and&nbsp;<a href="http://daniel.reuterwall.com/blog/2013/04/15/play-with-cors/">play with cors</a>&nbsp;<a href="https://gist.github.com/jeantil/7214962">this play cors filter implementation</a>.<br /><br />To let the javascript access the PLAY_SESSION cookie you need to set&nbsp;session.httpOnly=false in play's application.conf.<br /><br />In the javascript when making the http request to the cross origin server you need to copy the PLAY_SESSION cookie. In Angular.js you can do that like this.<br /><br /><br />$http.get('http://different.origin.host/resource/', {<br />&nbsp; headers: {<br />&nbsp; &nbsp; 'Cookie': 'PLAY_SESSION="'+$cookies.PLAY_SESSION+'"'<br />&nbsp; },<br />&nbsp; 'withCredentials': true<br />})
