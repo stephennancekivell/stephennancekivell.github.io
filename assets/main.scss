@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+.site-header {
+	border-top: none;
+}
+
 .social-media-list li {
 	display: inline-block;
 }
