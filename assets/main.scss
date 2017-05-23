@@ -16,15 +16,26 @@
 }
 
 .sidebar {
+	width: 250px;
 	position: sticky;
 	top: 1rem;
-	float: left;
+	display: none;
+	margin: 1rem;
 }
+
+@media (min-width: 800px) {
+	.sidebar {
+		display: block;
+	}
+}
+
 .home-content {
-	max-width: -webkit-calc(#{$content-width} + 450px - (#{$spacing-unit} * 2));
-	max-width:         calc(#{$content-width} + 450px - (#{$spacing-unit} * 2));
+	max-width: -webkit-calc(#{$content-width} + 500px - (#{$spacing-unit} * 2));
+	max-width:         calc(#{$content-width} + 500px - (#{$spacing-unit} * 2));
 	margin-right: auto;
 	margin-left: auto;
+	display: flex;
+	padding: 1rem;
 }
 
 .clearfix {
@@ -41,10 +52,6 @@
 
 .social-icons {
 	margin-left: 0;
-}
-
-.blurb {
-	text-align: center;
 }
 
 .social-icons li {
