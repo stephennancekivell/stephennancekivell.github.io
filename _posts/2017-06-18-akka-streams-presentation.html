@@ -1,0 +1,332 @@
+---
+layout: revealjs
+title: Akka Streams Presentation
+date: '2017-06-18T15:23:43.020+10:00'
+author: Stephen Nancekivell
+blurb: |
+  Akka streams is a scala library for stream data processing this was presented at the Scala Sydney meetup group.
+styles: |
+  .w100 img{width:100%;}
+  .w90 img{width:90%;}
+  .w80 img{width:80%;}
+  .w70 img{width:70%;}
+  .w60 img{width:60%;}
+  .w50 img{width:50%;}
+  .w40 img{width:40%;}
+  .w25 img{width:25%;}
+---
+
+class: center, middle
+
+# Akka Streams
+
+by Stephen Nancekivell
+
+@StephenNancekiv
+
+---
+
+# Agenda
+
+* reactive streams
+  * what are streams
+  * back pressure & reactive streams
+* Akka streams
+  * Example
+  * Cool features
+  * Community
+
+---
+class: center, middle
+
+.w50[![lightbend](/assets{{ page.id }}/lightbend-full-color-H1gGNav8JW.svg)]
+
+http://www.lightbend.com
+
+akka streams http://akka.io
+
+---
+
+# What are streams
+
+* scala.collection.Stream
+* Java 8 streams
+* Spark streaming
+* kafka streaming, AWS kinesis, google pub sub
+* ActiveMQ and friends
+* iterator
+
+.w50[![stream](/assets{{ page.id }}/stream.jpeg)]
+---
+
+# Properties of streams
+
+* infinite data
+* cant fit in memory
+* processed item by item
+
+
+can perform many collection operations
+* map
+* filter
+
+cant perform
+* exists
+* size
+
+---
+
+# Producers Consumers
+
+```scala
+Producer ~> B ~> C ~> Consumer
+```
+
+---
+
+# Producers Consumers
+
+```scala
+Producer ~> B ~> C ~> Consumer
+```
+
+
+akka terminology
+```scala
+Source ~> Flow ~> Sink
+```
+
+---
+class: center, middle
+
+# Push or Pull
+
+---
+
+# Push
+
+.center[.w100[![push](/assets{{ page.id }}/push1.jpg)]]
+
+---
+
+# Push
+
+* drop
+* overflow
+* block
+* retry
+
+---
+
+# Pull
+
+.center[.w100[![pull](/assets{{ page.id }}/pull.jpg)]]
+
+---
+
+# Pull
+
+* twice the latency
+* polling
+
+---
+
+# Dealing with Rate
+
+.center[.w100[![push](/assets{{ page.id }}/push-rate.jpg)]]
+
+---
+
+# Back Pressure
+
+.center[.w100[![back-pressure](/assets{{ page.id }}/back-pressure.jpg)]]
+
+---
+
+# Akka Streams
+
+Dynamic Push Pull
+
+Communicates demand
+
+---
+
+# Akka Streams
+
+.center[.w100[![akka-streams](/assets{{ page.id }}/akka-streams.jpg)]]
+
+---
+
+# Akka Streams
+
+Fast consumer effectively push
+
+Slow consumer effectively pull
+
+---
+
+# Reactive Streams
+
+reactive-streams.org
+
+Is a interface project. Not an implementation.
+
+Joint effort between different groups in industry.
+
+Lightbend, Netflix, Pivotal, Red Hat, Twitter, Oracle, ...
+
+---
+
+# Reactive Streams
+
+* Java 9 flow
+* rxJava
+* slick(Relational database)
+* reactive mongodb driver
+* reactive kafka
+* akka streams
+* fs2 (formerly scalaz-streams)
+* swave
+
+and more
+
+---
+
+# Case study
+
+* Credit Karma
+** https://engineering.creditkarma.com/data/akka-actors-akka-streams-when-you-should-care
+
+---
+
+# Akka Streams 
+
+```scala
+Source ~> Flow ~> Sink
+```
+
+Reusable pieces
+
+Lazy
+
+---
+
+# Hello world
+
+```scala
+  implicit val system = ActorSystem()
+  implicit val mat = ActorMaterializer()
+
+  val out: Future[Done] =
+    Source(List(1, 2, 3))
+      .map(x => x * x)
+      .filter(_ > 3)
+      .runWith(Sink.foreach(s => println(s)))
+```
+
+---
+
+# Akka Streams Functions
+
+```scala
+Flow[A]
+  .map(x => fn(x))
+  .filter(_ > 2)
+  .mapConcat(item => makeBatch(item): Seq[?])
+  .mapAsync(parallelism = 2)(item => makeFuture(item): Future[?])
+```
+
+---
+
+# Akka Streams Functions
+
+```scala
+Flow[A]
+  .grouped(10)
+  .groupedWithin(10, 1.second)
+  .sliding(5,1)
+```
+
+---
+
+# Akka Streams Functions
+
+```scala
+Flow[A]
+  .buffer(100, OverflowStrategy.dropHead)
+  .throttle(elements = 10, per = 1.second,
+            maximumBurst = 5, mode = ThrottleMode.Shaping)
+```
+
+---
+
+# Non Linear Streams
+
+```scala 
+  in ~> f1 ~> bcast ~> f2 ~> merge ~> f3 ~> out
+              bcast ~> f4 ~> merge
+
+```
+
+---
+
+# Graph DSL
+
+```scala
+RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.Builder[NotUsed] =>
+  import GraphDSL.Implicits._
+  val in = Source(1 to 10)
+  val out = Sink.ignore
+ 
+  val bcast = builder.add(Broadcast[Int](2))
+  val merge = builder.add(Merge[Int](2))
+ 
+  val f1, f2, f3, f4 = Flow[Int].map(_ + 10)
+ 
+  in ~> f1 ~> bcast ~> f2 ~> merge ~> f3 ~> out
+              bcast ~> f4 ~> merge
+              
+  ClosedShape
+})
+```
+
+Graph can be treated as a flow.
+
+---
+
+# Community
+
+Alpakka Project
+http://github.com/akka/alpakka
+
+Others
+
+reactive kafka
+
+---
+
+# Where is it used
+
+* streaming
+* batch job
+* akka-http
+* ETL
+
+---
+
+# Futher Reading
+
+* lightbend conference presentations, Konrad, Viktor
+* Akka docs, really good.
+
+
+# Thanks to
+* lightbend team
+
+---
+
+# Questions
+
+---
+
+# End

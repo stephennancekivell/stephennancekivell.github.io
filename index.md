@@ -13,6 +13,11 @@ layout: home
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
+
+        {% if post.blurb %}
+          <p>{{ post.blurb }}</p>
+        {% endif %}
+
       </li>
     {% endfor %}
   </ul>
