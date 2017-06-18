@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Tricks with Futures
+
+by Stephen Nancekivell
+
+---
+
+# Agenda
+
+1. What are Futures
+2. Tricks!
+
+---
+
+# What are Futures
+
+---
+
+# What are Futures
+
+Data Type, container for a value, 
+
+```scala
+
+class Future[T] {
+  ...
+}
+```
+
+```scala
+val one = Future {
+  1
+}
+
+val two = Future {
+  Thread.sleep(1000)
+  2
+}
+
+```
+---
+
+# What are Futures
+
+Data Type, container for a value, 
+
+```scala
+
+class Future[T] {
+  def map[A](fn: T => A): Future[A]
+}
+```
+---
+
+# What are Futures
+
+Data Type, container for a value,
+
+```scala
+
+class Future[T] {
+  def map[A](fn: T => A): Future[A]
+}
+
+```
+
+```scala
+val one = Future {
+  1
+}
+
+val two = one.map { oneValue =>
+  oneValue + 1
+}
+
+// Future(2)
+```
+
+---
+
+# What are Futures
+
+Data Type, container for a value, 
+
+```scala
+
+class Future[T] {
+  def map[A](fn: T => A): Future[A]
+  def flatMap[A](fn: T => Future[A]): Future[A]
+}
+```
+---
+
+# What are Futures
+
+```scala
+
+class Future[T] {
+  def map[A](fn: T => A): Future[A]
+  def flatMap[A](fn: T => Future[A]): Future[A]
+}
+
+```
+
+```scala
+val futureId: Future[Int] = ???
+def find(id: Int): Future[String] = ???
+
+val result: Future[String] =
+  futureId.flatMap { id =>
+    find(id)
+  }
+
+```
+
+---
+
+# Tricks
+
+---
+
+# Tricks
+I have lots of futures and I want all of their values to work with at once.
+
+---
+
+# live coding
+(☞ﾟ∀ﾟ)☞
+---
+
+# Tricks
+I am making too many futures at once, my database cant keep up!
+
+---
+
+# live coding
+(☞ﾟ∀ﾟ)☞
+
+---
+
+# Monads
+Monads
+Monads
+
+---
+
+# Monads
+Monads
+Monads
+
+![Monad](./buritto.jpeg)
+
+---
+
+# Monads
+```scala
+class Future[T] {
+  def map[A](fn: T => A): Future[A]
+  def flatMap[A](fn: T => Future[A]): Future[A]
+}
+```
+
+---
+
+# Monads
+```scala
+class Future[T] {
+  def map[A](fn: T => A): Future[A]
+  def flatMap[A](fn: T => Future[A]): Future[A]
+}
+```
+
+```scala
+trait Monad[T] {
+  def map[A](fn: T => A): Monad[A]
+  def flatMap[A](fn: T => Monad[A]): Monad[A]
+}
+```
+
+---
+
+# Thank You
+
+![Future](./delorean.jpg)
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        //highlightStyle: 'arta',
+        //highlightStyle: 'ascetic'
+        //highlightStyle: 'dark'
+        //highlightStyle: 'default'
+        //highlightStyle: 'far'
+        //highlightStyle: 'github'
+        //highlightStyle: 'googlecode'
+        //highlightStyle: 'idea'
+        //highlightStyle: 'ir_black'
+        //highlightStyle: 'magula'
+        
+        //highlightStyle: 'monokai'
+        
+        //highlightStyle: 'rainbow'
+        //highlightStyle: 'solarized-dark'
+        //highlightStyle: 'solarized-light'
+        //highlightStyle: 'sunburst'
+        //highlightStyle: 'tomorrow'
+        //highlightStyle: 'tomorrow-night-blue'
+        //highlightStyle: 'tomorrow-night-bright'
+        
+        highlightStyle: 'tomorrow-night'
+        //highlightStyle: 'tomorrow-night-eighties'
+        //highlightStyle: 'vs'
+        //highlightStyle: 'zenburn.'
+      });
+    </script>
+  </body>
+</html>
