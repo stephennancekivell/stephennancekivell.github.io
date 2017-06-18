@@ -16,7 +16,5 @@ layout: home
       </li>
     {% endfor %}
   </ul>
-
-  <p>Follow me on twitter for updates {% include icon-twitter.html username=site.twitter_username %}</p>
-
+  
 </div>
