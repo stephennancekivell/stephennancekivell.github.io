@@ -27,3 +27,6 @@ If anyone is intrested I can include other json libraries.
 
 ## Benchmark Source
 The code for this benchmark can be found on my github. [https://github.com/stephennancekivell/circe-argonaut-compile-times](https://github.com/stephennancekivell/circe-argonaut-compile-times)
+
+## Thanks
+Thanks to the authors of these great libraries. Scala wouldnt be great language it is without your help.
