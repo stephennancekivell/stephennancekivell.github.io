@@ -24,3 +24,6 @@ Mabye we could use shapeless to export codec definations for us. Then we could s
 
 ## Further Work
 If anyone is intrested I can include other json libraries.
+
+## Benchmark Source
+The code for this benchmark can be found on my github. [https://github.com/stephennancekivell/circe-argonaut-compile-times](https://github.com/stephennancekivell/circe-argonaut-compile-times)
