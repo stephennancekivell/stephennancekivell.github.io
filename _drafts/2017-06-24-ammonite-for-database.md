@@ -1,8 +1,15 @@
-# SQL Database
+---
+layout: post
+title: SQL Database
+date: '2017-06-24T00:00:00.000-00:00'
+author: Stephen Nancekivell
+tags: 
+modified_time: '2017-06-24T00:00:00.000-00:00'
+---
 
-Ammonite is great for those database jobs that are too complicated for SQL alone. This example uses @lnk("ScalikeJDBC", "http://scalikejdbc.org/") to update some rows.
+[Ammonite](http://ammonite.io) is great for those database jobs that are too complicated for SQL alone. This example uses [ScalikeJDBC]("http://scalikejdbc.org/") to update some rows.
 
-```
+```scala
 import $ivy.{
   `org.scalikejdbc::scalikejdbc:3.0.0`,
   `ch.qos.logback:logback-classic:1.2.3`,
