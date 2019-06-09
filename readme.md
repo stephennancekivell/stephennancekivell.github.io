@@ -2,7 +2,7 @@
 
 ## development
 
-	jekyll serve --incremental --drafts
+	bundle exec jekyll serve --incremental --drafts
 
 ## todo
 * html to markdown content for old posts
