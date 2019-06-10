@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Circe, Argonaut Shapeless, Play Json Compile Times
+title: Scala Circe, Argonaut Shapeless, Play Json Compile Times
 date: '2017-07-06'
 author: Stephen Nancekivell
 tags: 
