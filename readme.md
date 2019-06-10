@@ -1,4 +1,4 @@
-# blog.stephenn.com
+# stephenn.com
 
 ## development
 
