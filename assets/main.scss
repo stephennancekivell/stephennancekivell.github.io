@@ -27,19 +27,22 @@
 	display: none;
 }
 
-@media (min-width: 800px) {
-	.sidebar {
-		display: block;
-	}
-}
-
 .home-content {
 	max-width: -webkit-calc(#{$content-width} + 500px - (#{$spacing-unit} * 2));
 	max-width:         calc(#{$content-width} + 500px - (#{$spacing-unit} * 2));
 	margin-right: auto;
 	margin-left: auto;
-	display: flex;
+	display: block;
 	padding: 1rem;
+}
+
+@media (min-width: 800px) {
+	.sidebar {
+		display: block;
+	}
+	.home-content {
+		display: flex;
+	}
 }
 
 .clearfix {
