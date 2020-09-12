@@ -10,7 +10,7 @@ modified_time: '2020-07-31T00:00:00.000-00:00'
 Im pleased to announce that on [Real Email](https://isitarealemail.com) you can now validate a csv file using some interactive features.
 Real Email is a developer focused email validation service, allowing you to check if an email address is real, before sending anything and possibly hurting your email reputation through bouned emails.
 
-![login form](/assets/2020-07-31-csv-parsing.png)
+![csv parser](/assets/2020-07-31-csv-parsing.png)
 
 
 Its always been possible to possible to validate a csv file with a clever shell script but its not very user friendly, I didnt think it was a very important use case for my market. I wanted to support it but not invent much time into it. 
