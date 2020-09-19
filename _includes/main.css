@@ -62,8 +62,15 @@
 	list-style: none;
 }
 
+.social-icons svg {
+	width: 1rem;
+	margin-right: 0.5rem;
+}
+
 .social-icons li a {
 	color: inherit;
+	display: flex;
+	align-items: center;
 }
 
 .social-icons .fa-linkedin-square {
@@ -85,3 +92,4 @@
 .project-links li {
 	list-style: none;
 }
+
