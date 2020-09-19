@@ -40,3 +40,6 @@ google_analytics: UA-21860813-8
 
 disqus:
   shortname: blog-stephenn-com
+
+sass:
+  style: compressed
