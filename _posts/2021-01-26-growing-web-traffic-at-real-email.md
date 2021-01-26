@@ -13,7 +13,7 @@ In this post I want to talk about how I grew the web traffic to my side project 
 
 ![Web Traffic Chart](/assets/2021-01-25-growing-web-traffic-02.png)
 
-# Q&A forums
+# Q&A Forums
 
 My first idea was to use Q&A sites, find people that had the problem Real Email solves and tell them about it. I was mostly using stackoverflow. For my very first answer I was on the 3rd or 4th page, where very few people would see it. Eventually it got voted up a bit. But mostly I had to target less popular questions in smaller niches to get my answers ranked higher and get some visitors through to my site. Most of the questions were like "How to validate emails in X?" where X is a different programming language.
 
