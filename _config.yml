@@ -18,7 +18,7 @@ author: Stephen Nancekivell
 description: > # this means to ignore newlines until "baseurl:"
   Stephens Tech Blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.stephenn.com"
+url: "https://stephenn.com"
 twitter_username: stephennancekiv
 github_username: stephennancekivell
 stackoverflow_username: 893854/stephen
