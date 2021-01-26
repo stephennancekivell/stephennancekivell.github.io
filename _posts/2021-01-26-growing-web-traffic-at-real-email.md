@@ -3,6 +3,8 @@ layout: post
 title: Growing Web Traffic at Real Email
 date: '2021-01-25T00:00:00.000-00:00'
 author: Stephen Nancekivell
+summary: How I grew the web traffic to Real Email
+image: /assets/2021-01-25-growing-web-traffic-02.png
 tags:
 modified_time: '2021-01-25T00:00:00.000-00:00'
 ---
