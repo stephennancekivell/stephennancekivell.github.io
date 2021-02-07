@@ -14,8 +14,8 @@ layout: home
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
 
-        {% if post.blurb %}
-          <p>{{ post.blurb }}</p>
+        {% if post.summary %}
+          <p>{{ post.summary }}</p>
         {% endif %}
 
       </li>
