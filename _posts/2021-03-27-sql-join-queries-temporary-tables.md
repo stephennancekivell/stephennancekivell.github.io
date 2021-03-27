@@ -4,11 +4,12 @@ title: SQL Join Queries Temporary Tables and File Sorts
 date: '2021-03-27T00:00:00.000-00:00'
 author: Stephen Nancekivell
 tags:
+summary: Eliminate file sort for fast queries
 image: /assets/2021-03-27-query-explain.png
 modified_time: '2021-03-27T00:00:00.000-00:00'
 ---
 
-# SQL Join queries, temporary tables and file sorts.
+# Eliminate File Sort for Fast Queries
 
 When sql performs queries sometimes it needs to break down the work into intermidiate steps saving the result in order to do further filtering on it. It seems counter intuitive but its often faster than if it were to do the steps for each row 1 by 1. This is often the case with poorly indexed joins or inefficent layouts.
 
