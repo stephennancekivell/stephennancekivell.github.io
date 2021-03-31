@@ -20,7 +20,7 @@ When a query reaches a particular difficulty or size you will see `Using index; 
 
 
 ### Example
-Consider the situation with two tables and a join query. We have `objects` and `items`. We are trying to list the recent objects with a particular item.p
+Consider the situation with two tables and a join query. We have `objects` and `items`. We are trying to list the recent objects with a particular item.
 
 ```sql
 create table object(
