@@ -11,16 +11,16 @@ modified_time: '2021-03-27T00:00:00.000-00:00'
 
 # Eliminate File Sort for Fast Queries
 
-When sql performs queries sometimes it needs to break down the work into intermidiate steps saving the result in order to do further filtering on it. It seems counter intuitive but its often faster than if it were to do the steps for each row 1 by 1. This is often the case with poorly indexed joins or inefficent layouts.
+When sql performs queries sometimes it needs to break down the work into intermediate steps saving the result in order to do further filtering on it. It seems counter intuitive but its often faster than if it were to do the steps for each row 1 by 1. This is often the case with poorly indexed joins or inefficient layouts.
 
 ![query-explain](/assets/2021-03-27-query-explain.png)
 
 
-When a query reaches a particular difficuilty or size you will see `Using index; Using temporary; Using filesort` in the `explain` for the query. This can be particularly bad for large datasets where it can cause lots of disk io. I've even seen it bring a server to its knees by exhausting the rds iops credit. 
+When a query reaches a particular difficulty or size you will see `Using index; Using temporary; Using filesort` in the `explain` for the query. This can be particularly bad for large datasets where it can cause lots of disk IO. I've even seen it bring a server to its knees by exhausting the Amazon RDS IOPS credit. 
 
 
 ### Example
-Consider the situation with two tables and a join query. We have `objects` and `items`. We are trying to list the recent objects with a particular item.
+Consider the situation with two tables and a join query. We have `objects` and `items`. We are trying to list the recent objects with a particular item.p
 
 ```sql
 create table object(
@@ -53,7 +53,7 @@ The reason for this is because the data is being filtered in one table and sorte
 
 If we could have an index across both tables or have the filter and sort on the same table then we can get that sweat `Backward index scan; Using index` performance. 
 
-In some databases like postgres you can use materialized views to archive this. In others you need to **change the data** or **change the query** to make it easier for sql.
+In some databases like Postgres you can use materialized views to archive this. In others you need to **change the data** or **change the query** to make it easier for SQL.
 
 By changing the data we need to copy the `created` field to the `order_time` table.
 
@@ -78,4 +78,4 @@ order by oi.object_id desc limit 10;
 ```
 
 
-Now the optimisised query can run 100s or 1000s of times faster, going from minutes to milliseconds.
+Now the optimized query can run 100s or 1000s of times faster, going from minutes to milliseconds.
