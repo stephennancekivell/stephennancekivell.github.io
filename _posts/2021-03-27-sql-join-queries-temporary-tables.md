@@ -13,7 +13,7 @@ Cross post with [Hands On Sql](https://handsonsql.com)
 
 # Eliminate File Sort for Fast Queries
 
-When sql performs queries sometimes it needs to break down the work into intermediate steps saving the result in order to do further filtering on it. It seems counter intuitive but its often faster than if it were to do the steps for each row 1 by 1. This is often the case with poorly indexed joins or inefficient layouts.
+When SQL performs queries sometimes it needs to break down the work into intermediate steps saving the result, in order to do further filtering. It seems counterintuitive but it's often faster than if SQL were to do the join for each row 1 by 1. This is often the case with poorly indexed joins or inefficient layouts.
 
 ![query-explain](/assets/2021-03-27-query-explain.png)
 
@@ -32,8 +32,8 @@ create table object(
 );
 
 create table object_item(
-  id int primary key auto_increment,
-   item_id int,
+   id int primary key auto_increment,
+   item_id int, -- some other item type
    object_id int not null,
    foreign key (object_id) references object(id),
    index object_item_1 (item_id)
@@ -48,14 +48,14 @@ where oi.item_id = @particular_item
 order by o.created desc limit 10;
 ```
 
-In the `explain` for the query plan we see the dreaded `Using index; Using temporary; Using filesort`. So its going to be slow.
+In the `explain` for the query we see the dreaded `Using index; Using temporary; Using filesort`. So its going to be slow.
 
 ### The Reason
-The reason for this is because the data is being filtered in one table and sorted with the other.
+This is because the data is being filtered in one table and sorted with the other. We only need the last 10 `objects` but it needs to filter all of the `object_item`'s and join them to find out what to sort.
 
-If we could have an index across both tables or have the filter and sort on the same table then we can get that sweat `Backward index scan; Using index` performance. 
+If we could have an index across both tables or have the filter and sort on the same table then we can get that sweet `Backward index scan; Using index` performance. 
 
-In some databases like Postgres you can use materialized views to archive this. In others you need to **change the data** or **change the query** to make it easier for SQL.
+In some databases like Postgres you can use materialized views to achieve this. In others you need to **change the data** or **change the query** to make it easier for SQL.
 
 By changing the data we need to copy the `created` field to the `order_time` table.
 
@@ -67,9 +67,9 @@ where oi.item_id = @particular_item
 order by oi.created desc limit 10;
 ```
 
-It annoying that you need two copies of the created time field. One way to keep the field up to date would be with triggers.
+It is annoying that you need two copies of the created time field. One way to keep the field up to date would be with triggers.
 
-Luckily there is a another property we can use to make it easier by changing the query. Because our database is using incrementing primary keys we can use the `object_id` as a proxy for `created` in the sort.
+Luckily there is another property we can use to make the query easier. Because our database is using incrementing primary keys we can use the `object_id` as a proxy for `created` in the sort.
 
 For example
 ```sql
