@@ -55,7 +55,7 @@ In this example we have 1 million users, 1 million tweets with 1000 hash tags, a
 In the `explain` for the query we see the plan has the dreaded `Using index; Using temporary; Using filesort`.
 
 ### The Reason
-This is because the data is being filtered on one side of the join and sorted on the other.. We only need the last 10 `user` but it needs to filter all of the `tweets`'s and join them to find out what to sort.
+This is because the data is being filtered on one side of the join and sorted on the other.. We only need the last 10 `user` but it needs to filter **all** of the `tweets`'s and join them to find out what to sort.
 
 If we could have an index across both tables or have the filter and sort on the same table then we can get that sweet `Backward index scan` performance. 
 
