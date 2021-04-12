@@ -5,7 +5,7 @@ date: '2021-04-12T00:00:00.000-00:00'
 author: Stephen Nancekivell
 tags:
 summary: How to Improve your Scala Compilation Times
-image: /assets/2021-04-12-query-explain.png
+image: /assets/2021-04-12-compilation-chart-1a.gif
 modified_time: '2021-04-12T00:00:00.000-00:00'
 ---
 
