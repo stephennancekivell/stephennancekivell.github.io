@@ -1,5 +1,9 @@
 @import "{{ site.theme }}";
 
+p {
+	margin-bottom: 1.3rem;
+}
+
 .default-wrapper {
 	max-width: 800px;
 }
