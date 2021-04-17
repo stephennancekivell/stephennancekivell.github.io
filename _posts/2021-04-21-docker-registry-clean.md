@@ -59,3 +59,5 @@ aws ecr bulk-delete-images --repository-name $REPOSITORY "$allToDelete"
 ```
 
 Happy Hacking
+
+If you liked this article and want more tips, follow me on twitter [@hi_stephen_n](https://twitter.com/hi_stephen_n) 💙
