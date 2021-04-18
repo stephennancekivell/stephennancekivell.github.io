@@ -39,6 +39,8 @@ But for your private docker repositories where you control all of the usages of 
 
 AWS provides lifecycle rules which can delete old images, but it does not have the smarts to check if an image is still in use by a running container or if it is a SNAPSHOT or latest build. So you are left with the assumption that only the last N builds are important and crossing your fingers.
 
+![ECR Lifecycle rule](/assets/2021-04-17-ecr-lifecycle-rule.png)
+
 ## AWS ECR Cleaning Script
 
 You can build a bash simple script using the `aws cli` command to delete old images. You can filter for SNAPSHOT and latest. However this is still using the assumption that only the most recent are important.
