@@ -79,3 +79,5 @@ The API is deployed as a docker container on AWS Fargate.
 ## Fin
 
 Docker Dash still has a way to go, implementing features and adding bells and whistles and this architecture will take it a long way.
+
+If you liked this article and want more tips, follow me on twitter [@hi_stephen_n](https://twitter.com/hi_stephen_n) 💙
