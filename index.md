@@ -14,12 +14,20 @@ layout: home
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
 
+        {% if post.image %}
+        <a  href="{{ post.url | relative_url }}">
+          <img class="post-img" alt="{{post.title}}" src="{{ post.image }}" />
+        </a>
+        {% endif %}
+
         {% if post.summary %}
           <p>{{ post.summary }}</p>
         {% endif %}
 
+
       </li>
     {% endfor %}
+
   </ul>
   
 </div>

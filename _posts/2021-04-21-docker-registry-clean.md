@@ -5,7 +5,6 @@ date: "2021-04-12T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
 summary: How to clean your Docker Repository
-image: /assets/2021-04-12-compile-summary-chart-2.png
 modified_time: "2021-04-17T00:00:00.000-00:00"
 ---
 
