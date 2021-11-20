@@ -28,7 +28,7 @@ But for your private docker repositories where you control all of the usages of 
 
 ## How to Safely Delete Docker Images
 
-- Dont delete images that are in use or that you might need soon. Often it is ok to assume that only the most recent will be needed.
+- Don't delete images that are in use or that you might need soon. Often it is ok to assume that only the most recent will be needed.
 - Keep the last 5 snapshot builds
 - Keep the last 10 non-snapshot builds
 - Keep the “latest” tag
