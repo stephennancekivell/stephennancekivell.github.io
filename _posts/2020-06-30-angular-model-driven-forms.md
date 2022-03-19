@@ -1,33 +1,35 @@
 ---
 layout: post
-title: Model driven forms in Angular
+title: Model driven form builder component in Angular
 date: '2020-06-30T00:00:00.000-00:00'
 author: Stephen Nancekivell
 tags: 
+summary: Model driven components are a great way to quickly build out an app with consitent styling. A form builder component can make it easier to build apps.
+image: /assets/2020-06-30-login-form.gif
 modified_time: '2020-06-30T00:00:00.000-00:00'
 ---
 
-Model driven views are a great way to enforce consistency in any website or app. 
+Model driven components are a great way to quickly build out an app with consitent styling.
 
-When making web forms there are lots of subtle descisions that need to be made about display, input validation, error handling and UX. By using a form component and a model driven view you can solve these issues in one place while still being able to handle a wide range of input types.
+When making web forms there are lots of subtle descisions you need to be make about display, validation, error handling and UX. By using a form builder component with a form definition you can make these desicions in one place, save lots of repetitive and support a wide variety of forms.
 
-In this post I will talk about a form component I made for [Real Email](https://isitarealemail.com). In the login / user managemnet features alone there are 5 instances of this form.
+In this post I will talk about a form builder component I made for [Real Email](https://isitarealemail.com). In the login & user management features there are 5 instances of this form alone! Imagine all the horrible copy and pasted html & css that would be needed without this form builder component.
 
 
 ![login form](/assets/2020-06-30-login-form.gif)
 
 
-In [Angular](https://angular.io/) we will create a form component that accepts a simple model of the form and renders it.
+In [Angular](https://angular.io/) we will create a form component that accepts a simple model of the form and renders it. In [React](https://reactjs.org/) you can create a similar component.
 
 Using the form will be as simple as.
 
 ```
-<app-form [fields]="field" [onSubmit]="onSubmit.bind(this)">
+<app-form [fields]="fieldsModel" [onSubmit]="onSubmit.bind(this)">
 </app-form>
 ```
-
+With a definition of.
 ```typescript
-fields = {
+fieldsModel = {
     email: {
       label: 'Email',
       type: FieldModelType.Text,
@@ -43,13 +45,11 @@ fields = {
 };
 
 const onSubmit = () => {
-      return new Promise((resolve) => {
-        console.log(
-          fields.email.formControl.value,
-          fields.password.formControl.value
-        );
-        setTimeout(resolve, 2000);
-      });
+    console.log(
+      "submit",
+      fields.email.formControl.value,
+      fields.password.formControl.value
+    );
 };
 ```
 
