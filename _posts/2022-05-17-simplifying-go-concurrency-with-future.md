@@ -176,7 +176,7 @@ soupFuture := future.New(func() Soup {
     <div>
         <p>Cautious Cat says,</p>
         <quote>
-        "Future only has one value and most functions in my code returns an error as well"
+        "Future only has one value and most functions in my code return an error as well"
         </quote>
     </div>  
 </div>
@@ -197,7 +197,7 @@ recipe, err := recipeFuture.Get().Values()
 
 <div style="display:flex; align-items:flex-end; justify-content:flex-end; padding:1rem; margin-bottom:2rem; background-color:#fcb;">
     <div>
-        <p>Cautious Cat says, "I heard generics were new and might be slow."</p>
+        <p>Cautious Cat says, "I heard generics are new and might be slow."</p>
     </div>  
     <img style="height: 12rem;width: 10rem; margin-left:2rem;" src="/assets/2022-05-17-cat-2.png">
 </div>
