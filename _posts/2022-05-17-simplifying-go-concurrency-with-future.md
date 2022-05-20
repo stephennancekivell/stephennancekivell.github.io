@@ -11,7 +11,7 @@ modified_time: "2022-05-18T00:00:00.000-00:00"
 
 # Simplifying golang concurrency with [go-future](https://github.com/stephennancekivell/go-future)
 
-[Go](https://go.dev/) comes with good low-level concurrency primitives Goroutines, channels and the sync package. However, using these often feel like a juggle, care must be taken or it can lead to bugs causing race conditions, deadlocks or even data corruption. Preventing these bugs in large codebases is no small feat as has been studied in the code of [Uber](https://arxiv.org/pdf/2204.00764.pdf), [Docker, Kubernetes and gRPC](https://songlh.github.io/paper/go-study.pdf).
+[Go](https://go.dev/) comes with good low-level concurrency primitives Goroutines, channels and the sync package. However, using these can often feel like a juggle, care must be taken or it can lead to bugs with race conditions, deadlocks or even data corruption. Preventing these bugs in large codebases is no small feat as has been studied in the code of [Uber](https://arxiv.org/pdf/2204.00764.pdf), [Docker, Kubernetes and gRPC](https://songlh.github.io/paper/go-study.pdf).
 
 Now that generics have landed in Go, it's the perfect time to see if a Future library ([go-future](https://github.com/stephennancekivell/go-future)) can help simplify our code and make it less error-prone.
 
