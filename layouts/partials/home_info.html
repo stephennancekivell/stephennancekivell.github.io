@@ -1,16 +1,27 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
-    <header class="entry-header">
-        <div class="avitar">
-            <img alt="Stephen Nancekivell" src="/assets/profile_small.webp" />
-          </div>
-        <h1>{{ .Title | markdownify }}</h1>
-    </header>
-    <div class="entry-content">
-        <p>{{ .Content | markdownify }}</p>
+    <div>
+        <header class="entry-header-flex entry-header">
+        
+            <div>
+                <div class="avitar">
+                    <img alt="Stephen Nancekivell" src="/assets/profile_small.webp" />
+                </div>
+                {{ partial "social_icons.html" site.Params.socialIcons }}
+            </div>
+        
+            <div style="max-width:300px;">
+                <h1>{{ .Title | markdownify }}</h1>
+                <p class="entry-content">
+                    I like programming, SaaS and bootstrapping
+                </p>
+                <p class="entry-content">@ <a href="https://userwat.ch">Userwatch</a></p>
+            </div>
+        
+            <div class="entry-content">
+                <p>{{ .Content | markdownify }}</p>
+            </div>
+        </header>
     </div>
-    <footer class="entry-footer">
-        {{ partial "social_icons.html" site.Params.socialIcons }}
-    </footer>
 </article>
 {{- end -}}

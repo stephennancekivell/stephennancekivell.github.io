@@ -1,3 +1,59 @@
-baseURL: http://example.org/
+baseURL: 'https://stephenn.com'
 languageCode: en-us
-title: My New Hugo Site
+title: Stephen's Tech Blog
+theme: PaperMod
+defaultContentLanguage: en
+hasCJKLanguage: false
+paginate: 30
+googleAnalytics: your-google-analytics-id
+disqusShortname: your-disqus-shortname
+permalinks:
+  # posts: '/posts/:title/'
+  posts: '/:year/:month/:title'
+markup:
+  highlight:
+    guessSyntax: true
+    style: emacs
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true
+params:
+  enableRSS: true
+  enableComments: false
+  enableGoogleAnalytics: true
+  showToc: true
+  math: false
+  hideFooter: true
+  hiddenPostSummaryInHomePage: false
+  homeInfoParams:
+    Title: Hi there 👋
+
+    Content: >
+      - ## Indie Projects
+
+      - [Webhook Wizard 🧙‍♂️](https://webhookwizard.com)
+
+      - [Docker Dash](https://dockerdash.com)
+
+      - Sold [RealEmail](https://IsItARealEmail.com)
+
+  socialIcons:
+      - name: github
+        url: "https://github.com/stephennancekivell"
+      - name: twitter
+        url: "https://twitter.com/hi_stephen_n"
+      - name: linkedin
+        url: "https://www.linkedin.com/in/stephen-nancekivell-77003039"
+      - name: stackoverflow
+        url: 893854/stephen
+
+menu:
+    main:
+        - identifier: webhookwizard
+          name: Webhook Wizard 🧙‍♂️
+          url: https://webhookwizard.com
+          weight: 10

@@ -1,10 +1,23 @@
-.avitar {
-    margin-right: 2rem;
-}
 
 .avitar img {
     max-width: 160px;
     border: solid #eee 0.2rem;
     border-radius: 50%;
     margin-bottom: 1.5rem; 
+}
+
+.entry-header-flex div {
+    margin-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .entry-header-flex {
+        display: flex !important;
+        align-items: flex-end;
+    }
+}
+
+
+.home-info {
+    min-height: initial;
 }
