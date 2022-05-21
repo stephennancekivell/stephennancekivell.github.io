@@ -1,0 +1,10 @@
+.avitar {
+    margin-right: 2rem;
+}
+
+.avitar img {
+    max-width: 160px;
+    border: solid #eee 0.2rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem; 
+}
