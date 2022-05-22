@@ -9,11 +9,15 @@
 .entry-header-flex div {
     margin-right: 1rem;
 }
+.entry-header-flex div:not(:first-child) {
+    margin-top: 2rem;
+}
 
 @media screen and (min-width: 768px) {
     .entry-header-flex {
         display: flex !important;
-        align-items: flex-end;
+        justify-content: space-between;
+        /* align-items: flex-end; */
     }
 }
 

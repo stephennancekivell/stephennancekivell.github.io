@@ -3,19 +3,21 @@
     <div>
         <header class="entry-header-flex entry-header">
         
-            <div>
-                <div class="avitar">
-                    <img alt="Stephen Nancekivell" src="/assets/profile_small.webp" />
+            <div style="display:flex;">
+                <div>
+                    <div class="avitar">
+                        <img alt="Stephen Nancekivell" src="/assets/profile_small.webp" />
+                    </div>
+                    {{ partial "social_icons.html" site.Params.socialIcons }}
                 </div>
-                {{ partial "social_icons.html" site.Params.socialIcons }}
-            </div>
-        
-            <div style="max-width:300px;">
-                <h1>{{ .Title | markdownify }}</h1>
-                <p class="entry-content">
-                    I like programming, SaaS and bootstrapping
-                </p>
-                <p class="entry-content">@ <a href="https://userwat.ch">Userwatch</a></p>
+            
+                <div style="max-width: 300px;">
+                    <h2>{{ .Title | markdownify }}</h2>
+                    <p class="entry-content">
+                        I like programming, SaaS and bootstrapping
+                    </p>
+                    <p class="entry-content">@ <a href="https://userwat.ch">Userwatch</a></p>
+                </div>
             </div>
         
             <div class="entry-content">
