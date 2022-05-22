@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Development on Stephen&#39;s Tech Blog</title>
+    <link>https://stephenn.com/tags/development/</link>
+    <description>Recent content in Development on Stephen&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Nov 2010 18:49:00 -0800</lastBuildDate><atom:link href="https://stephenn.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TM Watcher Android app</title>
+      <link>https://stephenn.com/2010/11/tm-watcher-android-app/</link>
+      <pubDate>Sun, 14 Nov 2010 18:49:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2010/11/tm-watcher-android-app/</guid>
+      <description>TM Watcher for Trademe.co.nzTM Watcher checks auctions in your Trademe watchlist to see when any of their attributes change, then notify the user. This includes attributes like bid price, end date.--I&#39;ve put alot more polish into this than ODW, it feels good. I figured out how to have it run something at boot, which has the effect of greatly simplifying the user controls improving the user experience, compared to that of ODW.</description>
+    </item>
+    
+    <item>
+      <title>One Day Watcher Android app</title>
+      <link>https://stephenn.com/2010/10/one-day-watcher-android-app/</link>
+      <pubDate>Fri, 08 Oct 2010 02:49:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/10/one-day-watcher-android-app/</guid>
+      <description>I finished/published version 1.0 of my first android app today. One Day Watcher.This app automatically checks 1-day.co.nz for you, so you dont have to. It checks for keywords that you set, and gives you notification with the results.Check it out at http://code.google.com/p/one-day-watcher/or search for it on the Android Market.It&#39;ll be interesting to see if many people find it useful.</description>
+    </item>
+    
+  </channel>
+</rss>

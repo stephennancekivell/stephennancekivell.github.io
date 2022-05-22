@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Stephen&#39;s Tech Blog</title>
+    <link>https://stephenn.com/posts/</link>
+    <description>Recent content in Posts on Stephen&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simplifying Go Concurrency with Futures</title>
+      <link>https://stephenn.com/2022/05/simplifying-go-concurrency-with-future/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2022/05/simplifying-go-concurrency-with-future/</guid>
+      <description>Concurrency in golang can get tricky, now that generics have landed a Future library can help.</description>
+    </item>
+    
+    <item>
+      <title>Building Docker Dash - Technical Decisions</title>
+      <link>https://stephenn.com/2021/11/launching-docker-dash/</link>
+      <pubDate>Thu, 18 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2021/11/launching-docker-dash/</guid>
+      <description>Docker Dash is my new SaaS side project, it helps teams manage the security of their docker containers. This post is about some of the technical decisions I&amp;rsquo;ve made while building it.</description>
+    </item>
+    
+    <item>
+      <title>Docker Repository Cleaning</title>
+      <link>https://stephenn.com/2021/04/docker-repository-cleaning/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2021/04/docker-repository-cleaning/</guid>
+      <description>How to clean your Docker Repository</description>
+    </item>
+    
+    <item>
+      <title>How to Improve your Scala Compilation Times</title>
+      <link>https://stephenn.com/2021/04/improve-scala-compile-time/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2021/04/improve-scala-compile-time/</guid>
+      <description>How to Improve your Scala Compilation Times</description>
+    </item>
+    
+    <item>
+      <title>Improve SQL Join Queries that use Temporary Tables &amp; File Sorts</title>
+      <link>https://stephenn.com/2021/03/sql-join-queries-temporary-tables/</link>
+      <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2021/03/sql-join-queries-temporary-tables/</guid>
+      <description>Eliminate file sort for fast queries</description>
+    </item>
+    
+    <item>
+      <title>How to use a Raspberry Pi as a home server instead of a VPS</title>
+      <link>https://stephenn.com/2021/02/how-to-use-pi-as-home-server/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2021/02/how-to-use-pi-as-home-server/</guid>
+      <description>How to use a Raspberry Pi as a home server instead of a VPS</description>
+    </item>
+    
+    <item>
+      <title>Growing Web Traffic at Real Email</title>
+      <link>https://stephenn.com/2021/01/growing-web-traffic-at-real-email/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2021/01/growing-web-traffic-at-real-email/</guid>
+      <description>How I grew the web traffic to Real Email</description>
+    </item>
+    
+    <item>
+      <title>Building a work queue with Scala &amp; FS2</title>
+      <link>https://stephenn.com/2020/09/fs2-work-manager/</link>
+      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2020/09/fs2-work-manager/</guid>
+      <description>I&amp;rsquo;ve recently improved the csv parsing in my side project Real Email and built a work queue using FS2. In this post I will explain how to build a work queue with cancellation.
+The context for my work queue is that im validating csv files from a typical web app. This happens from the browser which then uses http polling to query for progress. The more interesting feature are that I wanted a way to cancel the processing and a way to limit the number of concurrent validations happening at once in case of a sudden spike in usage.</description>
+    </item>
+    
+    <item>
+      <title>Adding CSV to Real Email Validations and feature validation</title>
+      <link>https://stephenn.com/2020/07/adding-real-email-csv/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2020/07/adding-real-email-csv/</guid>
+      <description>Im pleased to announce that on Real Email you can now validate a csv file using some interactive features. Real Email is a developer focused email validation service, allowing you to check if an email address is real, before sending anything and possibly hurting your email reputation through bouned emails.
+Its always been possible to possible to validate a csv file with a clever shell script but its not very user friendly, I didnt think it was a very important use case for my market.</description>
+    </item>
+    
+    <item>
+      <title>Model driven form builder component in Angular</title>
+      <link>https://stephenn.com/2020/06/angular-model-driven-forms/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2020/06/angular-model-driven-forms/</guid>
+      <description>Model driven components are a great way to quickly build out an app with consitent styling. A form builder component can make it easier to build apps.</description>
+    </item>
+    
+    <item>
+      <title>Avoiding Scala Thread Exhaustion in Scalacache</title>
+      <link>https://stephenn.com/2018/03/avoiding-scala-thread-exhaustion.html</link>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2018/03/avoiding-scala-thread-exhaustion.html</guid>
+      <description>In this post im going to talk about thread exhaustion of the scala global execution context and a curious case where it came up in a old version of scalacache. Its classic scala advice that you shouldnt use the default execution context, in this post we will look into detail why. We will look into how it is then avoided in scalacache while maximising code reuse.
+Background Use of Await.ready starts a new thread on the default execution context, so if that happens enough you can run out of threads.</description>
+    </item>
+    
+    <item>
+      <title>Scala Circe, Argonaut Shapeless, Play Json Compile Times</title>
+      <link>https://stephenn.com/2017/07/circe-argonaut-shapless-play-json-compile-time/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2017/07/circe-argonaut-shapless-play-json-compile-time/</guid>
+      <description>Slow comile times in scala are a common complaint. This is usually because of advanced usage of implicit resolution and macros. The JSON libraries ArgonautShapeless for Argonaut, Circe and play-json make heavy use of that. I love the convience this approach provides, and I think its better than manually building codecs. Manually codecs can be error prone because you have to be careful about the position of arguments which may not even be defined in the same file.</description>
+    </item>
+    
+    <item>
+      <title>Tricks with Futures</title>
+      <link>https://stephenn.com/2016/12/tricks-with-futures/</link>
+      <pubDate>Sat, 10 Dec 2016 15:23:43 +1000</pubDate>
+      
+      <guid>https://stephenn.com/2016/12/tricks-with-futures/</guid>
+      <description>This presentation shows some tricks for dealing with Scala Future&amp;rsquo;s.</description>
+    </item>
+    
+    <item>
+      <title>How to examine and optimise locking in MySQL</title>
+      <link>https://stephenn.com/2015/03/how-to-examine-and-optimise-locking-in/</link>
+      <pubDate>Sat, 07 Mar 2015 23:46:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2015/03/how-to-examine-and-optimise-locking-in/</guid>
+      <description>Consider the following queries, each will lock the database in different ways. In this post Im going to show you how you see where each one is locking, and how to optimise it.update TabFoo set bla = ‘bla’ where id = 1; update TabFoo set bla = ‘bla’ where foo = ‘bla&#39;; 
+To see the locks in MySQL innodb, start a transaction run the query, then inspect the innodb status.</description>
+    </item>
+    
+    <item>
+      <title>How to write more maintainable code with the angular.js controller as syntax.</title>
+      <link>https://stephenn.com/2015/01/how-to-write-more-maintainable-code/</link>
+      <pubDate>Tue, 06 Jan 2015 03:30:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2015/01/how-to-write-more-maintainable-code/</guid>
+      <description>The Angular.js team have added a new way to access variables within your controller. When I first saw this I glossed over it and missed the point thinking it was just shortcut syntax, more ways of doing the same thing, but its not. In this post I’ll explain why the controller as syntax is good and you should be using it.
+The angular controller as syntax&amp;nbsp;looks like this.. ng-controller=“MyController as ctrl1” with access like this.</description>
+    </item>
+    
+    <item>
+      <title>Scala Testing Techniques</title>
+      <link>https://stephenn.com/2014/12/scala-testing-techniques/</link>
+      <pubDate>Sat, 13 Dec 2014 18:03:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2014/12/scala-testing-techniques/</guid>
+      <description>This post is about some of the different ways we can test our scala code. I think this is a bit of an overlooked subject, you don’t see too many scala tutorials that show you how you should test and its often quite different. At the surface this seems pretty basic, but like most code there are lots of ways to do it.
+No mocking
+
+You could test something by running it, and checking that it does what it should.</description>
+    </item>
+    
+    <item>
+      <title>A Comparison of Angular Routers</title>
+      <link>https://stephenn.com/2014/12/a-comparison-of-angular-routers/</link>
+      <pubDate>Mon, 08 Dec 2014 02:55:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2014/12/a-comparison-of-angular-routers/</guid>
+      <description>When programming using angular.js&amp;nbsp;the routers control the view, they are the link between the page url and what you see, what templates and controllers are shown on the page.
+In the Angular (1.x) ecosystem there are 3 main routers.* The standard router. angular-route* Angular-ui’s router ui-router* Angular-route-segment angular-route-segment
+SegmentsOne of the notable features is the ability to change segments of the page. Being able to have nested views, this is useful if you have a dynamic header with dynamic main content section.</description>
+    </item>
+    
+    <item>
+      <title>Integrating Play Micro Services With Shared Sessions Through Javascript</title>
+      <link>https://stephenn.com/2014/06/integrating-play-micro-services-with/</link>
+      <pubDate>Wed, 11 Jun 2014 00:04:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2014/06/integrating-play-micro-services-with/</guid>
+      <description>This post is about how to integrate sessions in Play Framework servers through javascript. Where you have two different servers (micro services) and you want to share the session between them.
+Because the session in play is just stored in a secured cookie the servers dont need to communicate, they just need the same encryption key application.secret usually in application.conf. This is used to sign the session cookie so if its changed the server rejects it.</description>
+    </item>
+    
+    <item>
+      <title>URL Shortener</title>
+      <link>https://stephenn.com/2014/05/url-shortener/</link>
+      <pubDate>Sun, 04 May 2014 00:07:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2014/05/url-shortener/</guid>
+      <description>This post is going to be a discussion about url shorteners, what the problems are, and how they could be useful, some potential business ideas. IT people will be familiar with these techniques, but these things are not obvious to everyone.
+The basic idea is to take big url and make it shorter so it can more easily be shared. In some places its nicer to have short urls like http://stephenn.</description>
+    </item>
+    
+    <item>
+      <title>Review: Making your own Angular.js</title>
+      <link>https://stephenn.com/2014/04/review-making-your-own-angularjs/</link>
+      <pubDate>Thu, 24 Apr 2014 02:02:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2014/04/review-making-your-own-angularjs/</guid>
+      <description>Tero Parviainen has written this amazing article. Making your own Angular.js
+http://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html
+Its amazing how much you can make with frameworks like angular.js without understanding it. But learning how it works is going to help you use it better and make better apps.
+Im finding with my scala server side programming that I dont need a big framework. With techniques like passing functions Im able to easily remove boiler plate.</description>
+    </item>
+    
+    <item>
+      <title>My first shot at testing a market</title>
+      <link>https://stephenn.com/2014/04/my-first-shot-at-testing-market.html</link>
+      <pubDate>Fri, 04 Apr 2014 04:05:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2014/04/my-first-shot-at-testing-market.html</guid>
+      <description>One day I want to start a online business, to sell some software as a service or something. Im not sure what yet, but when I do I&#39;ll need to do some marketing. I&#39;ve never really done that.
+You cant have a business without customers, you cant have customers without marketing.
+So I decided to try testing a simple marketing strategy, Adwords. I put up a simple website, a fake online store that sold nuts, an existing market, something I knew people already wanted.</description>
+    </item>
+    
+    <item>
+      <title>Hosting Files In S3 Securely</title>
+      <link>https://stephenn.com/2014/03/hosting-files-in-s3-securely/</link>
+      <pubDate>Wed, 19 Mar 2014 19:10:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2014/03/hosting-files-in-s3-securely/</guid>
+      <description>This post is about hosting files securely on amazon S3 and making those available through a web app. It can be a bit tricky to configure S3 through its various caches.
+Setup the bucket with webapp user that can upload / download make links.
+First off we need to create a user in amazon IAM for our webapp to login as. Do this through the console and take note of its ARN, use the keys to login.</description>
+    </item>
+    
+    <item>
+      <title>Javascript apps and rendering big lists</title>
+      <link>https://stephenn.com/2014/03/javascript-apps-and-rendering-big-lists/</link>
+      <pubDate>Fri, 14 Mar 2014 04:11:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2014/03/javascript-apps-and-rendering-big-lists/</guid>
+      <description>While writing apps with angular.js (which I love) I&#39;ve come across performance issues when rendering big lists. Like in searchbrew.com.
+For example if I do this with 2500 docs. It takes a while to render and slows the page down.
+&amp;lt;tr ng-repeat=&#34;doc in allDocs&#34;&amp;gt;
+&amp;nbsp; &amp;nbsp; &amp;lt;td&amp;gt;&amp;lt;a ng-href=&#34;{{ &#34;{{&#34; }}doc.url}}&#34;&amp;gt;{{ &#34;{{&#34; }}doc.title}}&amp;lt;/a&amp;gt;&amp;lt;/td&amp;gt;
+&amp;nbsp; &amp;nbsp; &amp;lt;td&amp;gt;{{ &#34;{{&#34; }}doc.description}}&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;We can see and measure this performance using chromes flame chart in the javascript cpu profiler.</description>
+    </item>
+    
+    <item>
+      <title>searchbrew.com</title>
+      <link>https://stephenn.com/2013/12/searchbrewcom/</link>
+      <pubDate>Tue, 31 Dec 2013 14:00:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2013/12/searchbrewcom/</guid>
+      <description>I made this website the other day.&amp;nbsp;searchbrew.com&amp;nbsp;This article about how I made it.
+
+Its a search for hombrew packages. Brew by itself doesnt have a very good search, because they dont want to collect description metadata about packages. Brew does have a link to the homepage of each package. I tried getting descriptions and indexing the homepage for search, but it didnt work very well. Then I came across this project&amp;nbsp;telemachus/homebrew-desc&amp;nbsp;which includes project descriptions.</description>
+    </item>
+    
+    <item>
+      <title>Tech Meetup&#39;s and Presenting</title>
+      <link>https://stephenn.com/2013/09/tech-meetups-and-presenting/</link>
+      <pubDate>Thu, 12 Sep 2013 02:45:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2013/09/tech-meetups-and-presenting/</guid>
+      <description>I just gave my second presentation at wellington.js, and a friend asked why? Why present at the meetup? The first question should be why go?
+Why go?They are a good way to connect to other people interested in the same stuff. Its good to have those people to bounce ideas off. Meet people to start new projects with.
+You learn new stuff! Its way easier learning about something new when you can just sit back, listen, and ask questions.</description>
+    </item>
+    
+    <item>
+      <title>Testing with underscorejs</title>
+      <link>https://stephenn.com/2013/07/testing-with-underscorejs/</link>
+      <pubDate>Mon, 01 Jul 2013 02:09:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2013/07/testing-with-underscorejs/</guid>
+      <description>Underscore is an awesome functional javascript library but I think it needs a flush feature so we can easily test our applications that use it.
+A underscore.flush method would allow you to test the different cases without having to make your unit tests slow. This could work similar to angular.js&#39;s $httpBackend.flush().
+Heres an implementation of what I mean.</description>
+    </item>
+    
+    <item>
+      <title>Server updates: Email notifications and 1-click Apply.</title>
+      <link>https://stephenn.com/2013/06/server-updates-automate-it-part-2.html</link>
+      <pubDate>Sat, 01 Jun 2013 00:12:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2013/06/server-updates-automate-it-part-2.html</guid>
+      <description>These days Im getting update notifications via email, and now applying those updates with one click.
+I&#39;ve had&amp;nbsp;email notifications for a while, But lately I got annoyed that&#39;d have to login to my server and run the `apt-get dist-upgrade` command. I noticed that I&amp;nbsp;wasn&#39;t&amp;nbsp;even doing it. I was just ignoring the updates, which is not good practice!
+So I&#39;ve turned the 5minute job of logging in and applying the update into a 1 second job.</description>
+    </item>
+    
+    <item>
+      <title>Awful UI from ASB</title>
+      <link>https://stephenn.com/2013/04/awful-ui-from-asb/</link>
+      <pubDate>Thu, 25 Apr 2013 05:20:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2013/04/awful-ui-from-asb/</guid>
+      <description>TL;DR ASB bank made their own input field masker and it&amp;nbsp;doesn&#39;t&amp;nbsp;handle copy and paste.
+So bank with ASB, and when I want to use my money by doing a online bank transfer I have to type in the recipients account number. This is bull shit. I have to TYPE their account number. I cant copy and paste it. Those account numbers are long, 15 digits long, like im going to remember it.</description>
+    </item>
+    
+    <item>
+      <title>How I Sync to my mac to my android</title>
+      <link>https://stephenn.com/2013/01/how-i-sync-to-my-mac-to-my-android/</link>
+      <pubDate>Sun, 27 Jan 2013 03:06:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2013/01/how-i-sync-to-my-mac-to-my-android/</guid>
+      <description>I used to use&amp;nbsp;SyncMe Wireless&amp;nbsp;but now I have a mac and SyncMe doesnt support the afp file sharing protocol. So I run a ssh server on the phone and use rsync over ssh to sync the folders. This is a different approach. Instead of the phone asking the computer when the files have changed. I run rsync from my computer which connects to the phone and does the update.</description>
+    </item>
+    
+    <item>
+      <title>Adding version info to your javascript app</title>
+      <link>https://stephenn.com/2013/01/adding-version-info-to-your-javascript/</link>
+      <pubDate>Sun, 20 Jan 2013 23:16:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2013/01/adding-version-info-to-your-javascript/</guid>
+      <description>When deploying apps is helpful to know exactly what version your looking at. Where it might be the one on your server that you deployed months ago or the version you have checked out on your development machine.
+With java / maven applications you can configure the maven jar plugin to append this information to the &amp;nbsp;jar META-INF.
+I havent found anything like this yet for javascript / angular.js but its easy to craft a script to append it like this.</description>
+    </item>
+    
+    <item>
+      <title>One click deploy and rollback From shell</title>
+      <link>https://stephenn.com/2013/01/one-click-deploy-and-rollback-from-shell/</link>
+      <pubDate>Sun, 20 Jan 2013 22:58:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2013/01/one-click-deploy-and-rollback-from-shell/</guid>
+      <description> Heres how I auto deploy my app, and how i roll back if something goes wrong.
+sh scripts/deploy.sh deploy
+sh scripts/deploy.sh deploy rollback
+It couldnt be easier.
+#!/bin/bash
+TARGET=example.com
+TARGET_BASE=/var/www/p
+TARGET_ARCHIVE=$TARGET_BASE/analyse.tgz
+TARGET_LOCATION=$TARGET_BASE/analyse
+case &#34;$1&#34; in
+deploy)
+echo &#34;building&#34;
+yeoman build
+if [ ! -d dist ];
+then
+echo &#34;yeoman didnt build&#34;
+exit 1
+fi
+cd dist
+tar -czf ../dist.tgz *
+cd ..
+echo &#34;backing up&#34;
+ssh $TARGET </description>
+    </item>
+    
+    <item>
+      <title>Dont make me think!</title>
+      <link>https://stephenn.com/2013/01/dont-make-me-think/</link>
+      <pubDate>Sun, 20 Jan 2013 22:05:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2013/01/dont-make-me-think/</guid>
+      <description>Part of my app requires extracting a date from the line of text. To do this I use a regular expression to pick the substring that has the date, then use a date format to parse it.
+Heres a screen shot my first version of getting that information. The user inputs both the regex and the date format.
+
+After a while it became clear to me that the regex could be derived from the date format.</description>
+    </item>
+    
+    <item>
+      <title>e2e testing in angular.js with a mocked httpBackend</title>
+      <link>https://stephenn.com/2012/09/e2e-testing-in-angularjs/</link>
+      <pubDate>Wed, 12 Sep 2012 00:07:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2012/09/e2e-testing-in-angularjs/</guid>
+      <description>Angular.js is a great framework used to make web apps, by manipulating the DOM and integrating with a rest backend.
+Edit:
+You should use ngMockE2E rather than the technique described bellow. They are verry similar. ngMockE2E is the more supported. An Example of using can be found&amp;nbsp;github.com/~~/angular_e2e_http/tree/ngMockE2E
+An Angular.js app has 3 main parts.
+*&amp;nbsp;&amp;nbsp;html where&amp;nbsp;additional&amp;nbsp;markup is used to populate a template with data.
+*&amp;nbsp;The controller&#39;s which control the templates and the services.</description>
+    </item>
+    
+    <item>
+      <title>Earthquake Data</title>
+      <link>https://stephenn.com/2012/07/earthquake-data/</link>
+      <pubDate>Thu, 05 Jul 2012 02:39:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2012/07/earthquake-data/</guid>
+      <description>I was in my first big earthquake the other day. Being my first I&amp;nbsp;didn&#39;t&amp;nbsp;know if it felt like a big one or not. I jumped on geonet.org.nz looking for the answer.
+GeoNet have this awesome heat map of earthquakes around NZ
+
+I thought it&#39;d be cool to make a video of it. To show how that changed over time. So I did.
+  Unfortunately I&#39;ve only got the aftermath.</description>
+    </item>
+    
+    <item>
+      <title>How 2degrees messed up their website</title>
+      <link>https://stephenn.com/2012/06/how-2degrees-messed-up-their-website/</link>
+      <pubDate>Sat, 09 Jun 2012 00:17:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2012/06/how-2degrees-messed-up-their-website/</guid>
+      <description>When on a small screen, the 2degrees site puts some of the content to the left of screen where you can’t see or click it. I noticed this on my smart phone when trying to top up.
+ Here what It looks like on my desktop.
+ 
+Notice the important “Top Up” button in the navigation menu on the left. This cannot be clicked on my phone.</description>
+    </item>
+    
+    <item>
+      <title>Working Hours Graph - Life Logger</title>
+      <link>https://stephenn.com/2012/05/working-hours-graph-life-logger/</link>
+      <pubDate>Wed, 23 May 2012 03:38:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2012/05/working-hours-graph-life-logger/</guid>
+      <description>I’ve been using Life Logger to track how long I spend at work. It has a pretty rudimentary way to get summaries from it. I wanted to see a graph of how long I’ve spent at work in a graph so I exported the database and made my own.
+Here’s what I Came Up With.If my boss sees this, its all those public holidays that bring those hours down.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu updates visualization</title>
+      <link>https://stephenn.com/2012/05/ubuntu-updates-visualization/</link>
+      <pubDate>Sun, 06 May 2012 07:55:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2012/05/ubuntu-updates-visualization/</guid>
+      <description>I was wondering if there would be lots of updates to Ubuntu leading up to the release of 11/4 and thought I could data mine this to find out. So I made a visualization to see if that was the case, turns out the opposite is true. There has been a distinct lack of updates in the last couple of months. At least in the main repository.
+Heres the visualization I made.</description>
+    </item>
+    
+    <item>
+      <title>Problem with corrupt files and eCrypt</title>
+      <link>https://stephenn.com/2012/04/problem-with-corrupt-files-and-ecrypt/</link>
+      <pubDate>Sat, 14 Apr 2012 20:56:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2012/04/problem-with-corrupt-files-and-ecrypt/</guid>
+      <description>I&#39;ve&amp;nbsp;been noticing some strange behaviour on my Ubuntu laptop lately. In Google Chrome I get logged out whenever I close the browser, even though set it to remember me. I&#39;ve also seen a lot of these log messages from eCryptfs which encrypts my home directory.
+Apr 14 10:29:41 stephen-ThinkPad-T520 kernel: [170037.012495] Valid eCryptfs headers not found in file header region or xattr region, inode 524280
+Apr 14 10:29:41 stephen-ThinkPad-T520 kernel: [170037.</description>
+    </item>
+    
+    <item>
+      <title>How to find an open source project to work on using github search.</title>
+      <link>https://stephenn.com/2012/03/how-to-find-open-source-project-to-work/</link>
+      <pubDate>Thu, 08 Mar 2012 00:57:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2012/03/how-to-find-open-source-project-to-work/</guid>
+      <description>You can search for popular projects that have TODO notes in the source code
+
+To search for popular projects execute this search query for repositories.
+followers:[1 TO *] followers:[1 TO *] If you judge popularity by the number of followers.
+
+To search for the TODO notes in that repo execute this search query for code.
+TODO repo:django/django
+
+Because the code is indexed differently to the repository there is no direct relationship from the code to the repositories followers.</description>
+    </item>
+    
+    <item>
+      <title>Router bandwidth usage monitoring per user</title>
+      <link>https://stephenn.com/2012/01/router-bandwidth-usage-monitoring-per/</link>
+      <pubDate>Sat, 21 Jan 2012 12:34:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2012/01/router-bandwidth-usage-monitoring-per/</guid>
+      <description>My flat has a shared internet connection, and we have a bandwidth cap, If we go over our cap it costs us all extra money.
+There&#39;s this great little script wrtbwmon&amp;nbsp;for DD-WRT&amp;nbsp;that shows total bandwidth usage. There are other projects that do a nicer job but they require different router firmware, that&amp;nbsp;doesn&#39;t&amp;nbsp;support my router.
+The main imitation&amp;nbsp;of Wrtbwmon is that it&amp;nbsp;doesn&#39;t&amp;nbsp;show how usage is changing over time. If someone suddenly uses lots of our bandwidth cap I need to be able to tell them when it was.</description>
+    </item>
+    
+    <item>
+      <title>Concordion acceptance tests from Scala</title>
+      <link>https://stephenn.com/2012/01/concordion-acceptance-tests-from-scala/</link>
+      <pubDate>Wed, 18 Jan 2012 02:11:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2012/01/concordion-acceptance-tests-from-scala/</guid>
+      <description>Concordion is a great test automation framework written in&amp;nbsp;Java. Scala is a great functional programming language which runs on the JVM. Scala can easily use&amp;nbsp;Java&amp;nbsp;code, which makes using&amp;nbsp;Concordion&amp;nbsp;from&amp;nbsp;Scala&amp;nbsp;very simple.
+However there was one feature of Concordion that gave us some trouble. Java&amp;nbsp;Concordion fixtures can return objects with public variables that Concordion can use to make assertions. But in Scala you cant really create public class variables.&amp;nbsp;Scala creates public getter and setter methods with the name of the variable and keeps the variable private.</description>
+    </item>
+    
+    <item>
+      <title>What should a Distributed Operating System should look like and how close are we to making one</title>
+      <link>https://stephenn.com/2011/09/what-should-distributed-operating/</link>
+      <pubDate>Mon, 19 Sep 2011 06:58:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2011/09/what-should-distributed-operating/</guid>
+      <description>Overview - A Distributed Operating SystemA Distributed operating system is a system that operates a distributed collection of computers, a cluster. Some require a single controller, but that shouldn&#39;t be necessary and isn&#39;t an interesting part of the problem. The system runs programmes and manages resources. The system should completely abstract the view of the hardware away from the software.
+Fault tolerance, scalability and redundancyThe cluster may be heterogeneous, nodes may go offline, new nodes may come online.</description>
+    </item>
+    
+    <item>
+      <title>Server updates: Automate it!</title>
+      <link>https://stephenn.com/2011/07/server-updates-automate-it/</link>
+      <pubDate>Thu, 28 Jul 2011 23:52:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2011/07/server-updates-automate-it/</guid>
+      <description>A Ubuntu automatic update script with email notifications.
+We all know that we should keep our systems up to date with security patches and whatnot. This is something that we&amp;nbsp;don&#39;t&amp;nbsp;thing about on desktop computers, our operating systems (windows/ubuntu) do it automatically for us, giving us popup notifications when these are ready.
+But on servers we never log in to get those notifications, as long as things keep running we&amp;nbsp;don&#39;t&amp;nbsp;care. You may get hacked one day and become extra&amp;nbsp;vigilant&amp;nbsp;for a while, but&amp;nbsp;that&#39;s&amp;nbsp;not going to last, were all lazy.</description>
+    </item>
+    
+    <item>
+      <title>Document Browsing and Comparison</title>
+      <link>https://stephenn.com/2011/06/document-browsing-and-comparison/</link>
+      <pubDate>Tue, 21 Jun 2011 18:15:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2011/06/document-browsing-and-comparison/</guid>
+      <description>I&#39;ve been looking at ways to organize a document set. Im particularly interested in comparing and clustering documents based on their content. In these experiments a test set of Wikipedia documents, most of the documents come from a keyword search about fish with some random ones to mix it up.
+
+For comparing these documents I’ve used the categories taken from wikipedia and mined the important words. Each document can belong to multiple categories.</description>
+    </item>
+    
+    <item>
+      <title>Where the google visualization library sucks.</title>
+      <link>https://stephenn.com/2011/05/where-google-visualization-library/</link>
+      <pubDate>Tue, 10 May 2011 03:39:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2011/05/where-google-visualization-library/</guid>
+      <description>If ya haven&#39;t checked out google charts&amp;nbsp;check them out, there pretty good.
+So you want to graph some stuff, but you dont have data for every point on the X axis, what do ya do.&amp;nbsp;You dont do this. Its wrong. The distance between 1997 - 2005 is the same as between 2005 - 2006, giving different meaning to the graph
+
+
+So what can ya do to get around it.</description>
+    </item>
+    
+    <item>
+      <title>quicky on word clouds</title>
+      <link>https://stephenn.com/2011/05/quicky-on-word-clouds/</link>
+      <pubDate>Fri, 06 May 2011 07:12:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2011/05/quicky-on-word-clouds/</guid>
+      <description>For some crazy reason (uni) I thought I&#39;d look at browsing and comparing text files using word clouds. Browsing or searching a set of files for particular subject matter.
+User would be presented a word cloud of all the words in all the files.User then clicks on the word that relates to the subject there after.The set of files is then filtered to contain with the filter selected word.If there are still too many documents in the set&amp;nbsp;repeat&amp;nbsp;from step 1.</description>
+    </item>
+    
+    <item>
+      <title>Bike Pics Wallpaper Android app</title>
+      <link>https://stephenn.com/2010/11/bike-pics-wallpaper-android-app/</link>
+      <pubDate>Sun, 28 Nov 2010 05:44:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2010/11/bike-pics-wallpaper-android-app/</guid>
+      <description>Well i did it again, i made another android app. Check it out in the market &#34;Bike Pics Wallpaper&#34;.I should probably come up with better names :( oh well, no surprises as to what it does. It gets a wallpaper from bikepics.com and automatically sets it as the phone wallpaper. Should be kinda fun. I&#39;m hoping that because motorbikes are cool all over the world this will be more popular than my other apps :)I timed how long it took me to code, 10.</description>
+    </item>
+    
+    <item>
+      <title>TM Watcher Android app</title>
+      <link>https://stephenn.com/2010/11/tm-watcher-android-app/</link>
+      <pubDate>Sun, 14 Nov 2010 18:49:00 -0800</pubDate>
+      
+      <guid>https://stephenn.com/2010/11/tm-watcher-android-app/</guid>
+      <description>TM Watcher for Trademe.co.nzTM Watcher checks auctions in your Trademe watchlist to see when any of their attributes change, then notify the user. This includes attributes like bid price, end date.--I&#39;ve put alot more polish into this than ODW, it feels good. I figured out how to have it run something at boot, which has the effect of greatly simplifying the user controls improving the user experience, compared to that of ODW.</description>
+    </item>
+    
+    <item>
+      <title>One Day Watcher Android app</title>
+      <link>https://stephenn.com/2010/10/one-day-watcher-android-app/</link>
+      <pubDate>Fri, 08 Oct 2010 02:49:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/10/one-day-watcher-android-app/</guid>
+      <description>I finished/published version 1.0 of my first android app today. One Day Watcher.This app automatically checks 1-day.co.nz for you, so you dont have to. It checks for keywords that you set, and gives you notification with the results.Check it out at http://code.google.com/p/one-day-watcher/or search for it on the Android Market.It&#39;ll be interesting to see if many people find it useful.</description>
+    </item>
+    
+    <item>
+      <title>mv with progress bar!</title>
+      <link>https://stephenn.com/2010/09/mv-with-progress-bar/</link>
+      <pubDate>Tue, 28 Sep 2010 02:26:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/09/mv-with-progress-bar/</guid>
+      <description>Well not quite use rsync with a quick alias. Countless times have i thought this would be nice, and now i have it :)
+alias rsynccopy=&#34;rsync --partial --progress --append -r&#34;alias rsyncmove=&#34;rsync --partial --progress --append --remove-sent-files -r&#34;</description>
+    </item>
+    
+    <item>
+      <title>How to restore your nexus one with the original shipping roms then
+update to 2.2.1</title>
+      <link>https://stephenn.com/2010/09/how-to-restore-your-nexus-one-with/</link>
+      <pubDate>Tue, 28 Sep 2010 01:32:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/09/how-to-restore-your-nexus-one-with/</guid>
+      <description>This will remove everything off your device, except stuff on the sd-card. I take no responsibility if you somehow brick the it ;). You will end up running 2.2.1 unrooted.
+This was written for the at&amp;t nexus one. Im not sure if there are any differences for the other one. You should be able to give this a go, and if the radio doesnt work with this stuff, you can always find the right stuff and re flash it.</description>
+    </item>
+    
+    <item>
+      <title>Ext3 file fragmentation on my server</title>
+      <link>https://stephenn.com/2010/06/ext3-file-fragmentation-on-my-server/</link>
+      <pubDate>Sun, 27 Jun 2010 03:13:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/06/ext3-file-fragmentation-on-my-server/</guid>
+      <description>So&amp;nbsp;I&#39;ve&amp;nbsp;got this file server/torrent box running raid 5 with 5 discs ATM, but i &amp;nbsp;can add more disks to it when it gets full and have been doing so for the last year. Lately we&#39;ve been noticing terrible performance from it, like browsing a folder (over samba) could take about 30 seconds to load.
+Looking into this i found that the files being downloaded slowly by the torrents are getting terribly&amp;nbsp;fragmented, &amp;nbsp;like, from filefrag</description>
+    </item>
+    
+  </channel>
+</rss>

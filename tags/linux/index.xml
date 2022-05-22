@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Stephen&#39;s Tech Blog</title>
+    <link>https://stephenn.com/tags/linux/</link>
+    <description>Recent content in Linux on Stephen&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jul 2011 23:52:00 -0700</lastBuildDate><atom:link href="https://stephenn.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Server updates: Automate it!</title>
+      <link>https://stephenn.com/2011/07/server-updates-automate-it/</link>
+      <pubDate>Thu, 28 Jul 2011 23:52:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2011/07/server-updates-automate-it/</guid>
+      <description>A Ubuntu automatic update script with email notifications.
+We all know that we should keep our systems up to date with security patches and whatnot. This is something that we&amp;nbsp;don&#39;t&amp;nbsp;thing about on desktop computers, our operating systems (windows/ubuntu) do it automatically for us, giving us popup notifications when these are ready.
+But on servers we never log in to get those notifications, as long as things keep running we&amp;nbsp;don&#39;t&amp;nbsp;care. You may get hacked one day and become extra&amp;nbsp;vigilant&amp;nbsp;for a while, but&amp;nbsp;that&#39;s&amp;nbsp;not going to last, were all lazy.</description>
+    </item>
+    
+    <item>
+      <title>mv with progress bar!</title>
+      <link>https://stephenn.com/2010/09/mv-with-progress-bar/</link>
+      <pubDate>Tue, 28 Sep 2010 02:26:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/09/mv-with-progress-bar/</guid>
+      <description>Well not quite use rsync with a quick alias. Countless times have i thought this would be nice, and now i have it :)
+alias rsynccopy=&#34;rsync --partial --progress --append -r&#34;alias rsyncmove=&#34;rsync --partial --progress --append --remove-sent-files -r&#34;</description>
+    </item>
+    
+    <item>
+      <title>Ext3 file fragmentation on my server</title>
+      <link>https://stephenn.com/2010/06/ext3-file-fragmentation-on-my-server/</link>
+      <pubDate>Sun, 27 Jun 2010 03:13:00 -0700</pubDate>
+      
+      <guid>https://stephenn.com/2010/06/ext3-file-fragmentation-on-my-server/</guid>
+      <description>So&amp;nbsp;I&#39;ve&amp;nbsp;got this file server/torrent box running raid 5 with 5 discs ATM, but i &amp;nbsp;can add more disks to it when it gets full and have been doing so for the last year. Lately we&#39;ve been noticing terrible performance from it, like browsing a folder (over samba) could take about 30 seconds to load.
+Looking into this i found that the files being downloaded slowly by the torrents are getting terribly&amp;nbsp;fragmented, &amp;nbsp;like, from filefrag</description>
+    </item>
+    
+  </channel>
+</rss>
