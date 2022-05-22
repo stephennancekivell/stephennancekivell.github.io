@@ -6,7 +6,9 @@ date: "2020-06-30T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
 summary: Model driven components are a great way to quickly build out an app with consitent styling. A form builder component can make it easier to build apps.
-image: /assets/2020-06-30-login-form.gif
+cover:
+  hidden: true
+  image: /assets/2020-06-30-login-form.gif
 modified_time: "2020-06-30T00:00:00.000-00:00"
 ---
 

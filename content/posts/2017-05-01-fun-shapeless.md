@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Fun Shapeless
-date: '2017-05-25T02:13:00.000-07:00'
+date: "2017-05-25T02:13:00.000-07:00"
 author: Stephen Nancekivell
-tags: 
-modified_time: '2017-05-25T02:23:43.020-07:00'
+tags:
+modified_time: "2017-05-25T02:23:43.020-07:00"
+draft: true
 ---
 
 This post is a tour of scala features discussing parametric types, type classes and type level programming.
@@ -34,6 +35,7 @@ xs map {
   case s: String => ???
 }
 ```
+
 Would produce the following runtime error.
 
 ```
@@ -41,7 +43,6 @@ scala.MatchError: 4 (of class java.lang.Long)
 ```
 
 Which you may not notice untill testing or you have deployed your code and a paying customer is using it. While this is trivial to fix in this small example it is much better/cheaper/faster if we can stop this at compile time.
-
 
 ## Type safety with sealed trait's
 
@@ -115,6 +116,7 @@ processNumber(2.1)
 ```
 
 If we make a mistake and try to run processNumber for a type that we dont have a implicit handler for a compiler error is thrown telling is.
+
 ```scala
 val x: Long = 4l
 processNumber(4l)
@@ -156,7 +158,6 @@ Even if we have instance.
 
 # Compile Time vs Runtime
 
-
 # Can we do better..
 
 `List[A]`, is fixed to one type
@@ -177,13 +178,13 @@ case class ::[+H, +T <: HList](head: H, tail: T) extends HList
 ```
 
 ```scala
-@ val xs = 1 :: 2.0 :: "three" :: HNil 
+@ val xs = 1 :: 2.0 :: "three" :: HNil
 xs: Int :: Double :: String :: HNil = 1 :: 2.0 :: three :: HNil
-@ xs.head 
+@ xs.head
 res2: Int = 1
-@ xs.last 
+@ xs.last
 res3: String = "three"
-@ xs.drop(2) 
+@ xs.drop(2)
 res5: String :: HNil = three :: HNil
 ```
 
@@ -216,11 +217,11 @@ val res26 = xs.take(5)
 concat
 
 ```scala
-val a = 1 :: 2.0 :: HNil 
+val a = 1 :: 2.0 :: HNil
 a: Int :: Double :: HNil = 1 :: 2.0 :: HNil
-val b = 2 :: "three" :: HNil 
+val b = 2 :: "three" :: HNil
 b: Int :: String :: HNil = 2 :: three :: HNil
-a ++ b 
+a ++ b
 res21: Int :: Double :: Int :: String :: HNil =
     1 :: 2.0 :: 2 :: three :: HNil
 ```
@@ -236,7 +237,6 @@ def giveMe = {
 
 ![what happens](/assets/whathappens.jpg)
 
-
 ```scala
 @ val xy = giveMe :: giveMe :: HNil
 xy: Any :: Any :: HNil = two :: 1 :: HNil
@@ -248,10 +248,10 @@ Cant build HList at runtime :'(
 
 Technique used in json parsers etc
 
-* argonaut
-* spray json
-* circe
-* spark database connectors
+- argonaut
+- spray json
+- circe
+- spark database connectors
 
 # Encoder Typeclass
 
@@ -308,7 +308,6 @@ genFoo.to(Foo(1, 2.0, "three"))
 res24: genFoo.Repr = 1 :: 2.0 :: three :: HNil
 ```
 
-
 ```scala
 implicit def genericEncoder[A, H <: HList](
   implicit
@@ -321,7 +320,7 @@ implicit def genericEncoder[A, H <: HList](
 
 def encode[A](a: A)(implicit encoder: Encoder[A]): String =
   encoder.encode(a)
-  
+
 encode(Foo(1, 2.0, "three"))
 "1,2.0,three"
 ```
@@ -330,7 +329,7 @@ encode(Foo(1, 2.0, "three"))
 
 # Further reading
 
-* Shapeless, Miles Sabin, 2011
-* The Type Astronaut's Guide to Shapeless, Dave Gurnell, book 2016
-* Roll your Own Shapeless, Daniel Spiewak, video presentation, scala days 2016
-* Scrap your boiler plate, paper 2003
+- Shapeless, Miles Sabin, 2011
+- The Type Astronaut's Guide to Shapeless, Dave Gurnell, book 2016
+- Roll your Own Shapeless, Daniel Spiewak, video presentation, scala days 2016
+- Scrap your boiler plate, paper 2003

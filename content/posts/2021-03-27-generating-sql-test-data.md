@@ -1,13 +1,22 @@
-* https://stackoverflow.com/questions/7398352/inserting-duplicated-mysql-test-data-the-easy-way
-* https://stackoverflow.com/questions/32005009/is-there-an-easy-way-to-generate-test-data-in-mysql
-* https://stackoverflow.com/questions/58748844/how-to-populate-mysql-database-with-test-data
+---
+layout: post
+title: generating sql test data
+date: "2021-03-27T00:00:00.000-00:00"
+author: Stephen Nancekivell
+tags:
+modified_time: "2021-03-27T00:00:00.000-00:00"
+draft: true
+---
 
+- https://stackoverflow.com/questions/7398352/inserting-duplicated-mysql-test-data-the-easy-way
+- https://stackoverflow.com/questions/32005009/is-there-an-easy-way-to-generate-test-data-in-mysql
+- https://stackoverflow.com/questions/58748844/how-to-populate-mysql-database-with-test-data
 
 ```
 
 set @@cte_max_recursion_depth = 10000000;
 insert into user (created)
-select 
+select
    from_unixtime(rand() * 1000000000)
  from (
   with recursive numbers as (
@@ -21,7 +30,7 @@ select
 
 
 insert into tweet(user_id, hash_tag)
-select 
+select
   (floor(rand() * 1000000)+1),
    (floor(rand() * 1000)+1)
  from (
@@ -61,53 +70,43 @@ order by oi.object_id desc limit 10;
 1	SIMPLE	o	NULL	eq_ref	PRIMARY	PRIMARY	4	test.oi.object_id	1	100.00	NULL
 ```
 
-
-
-
 create table user(
-  id int primary key auto_increment,  
-  deleted tinyint default 0,
-  group_id int not null,
-  foreign key (group_id) references group(id),
+id int primary key auto_increment,  
+ deleted tinyint default 0,
+group_id int not null,
+foreign key (group_id) references group(id),
 );
 
 create table user_group(
-  id int primary key auto_increment
-  account_id int not null,
-  foreign key (account_id) references account(id),
+id int primary key auto_increment
+account_id int not null,
+foreign key (account_id) references account(id),
 );
 
 create table account(
-  id int primary key auto_increment
+id int primary key auto_increment
 );
 
-
 insert into account (id)
-select 
-  numbers.n
- from (
-  with recursive numbers as (
-  select 1 as n
-  union all
-  select n + 1 from numbers
-  where n < 100
-  )
-  select * from numbers
+select
+numbers.n
+from (
+with recursive numbers as (
+select 1 as n
+union all
+select n + 1 from numbers
+where n < 100
+)
+select \* from numbers
 ) as numbers
 
-
-
-select * from user
+select \* from user
 where deleted = 0
 and group_id in (1,2,3,4,5)
 order by id desc limit 10;
 
-
-select u.* from user u
+select u.\* from user u
 join group g on u.group_id = g.id
 where u.deleted = 0
 and g.account_id = 85
 order by id desc limit 10;
-
-
-

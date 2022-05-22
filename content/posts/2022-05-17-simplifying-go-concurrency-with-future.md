@@ -6,7 +6,9 @@ date: "2022-05-17T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
 summary: Concurrency in golang can get tricky, now that generics have landed a Future library can help.
-image: /assets/2022-05-17-undraw_Software_engineer_re_tnjc.png
+cover:
+  image: /assets/2022-05-17-undraw_Software_engineer_re_tnjc.png
+  hidden: true
 modified_time: "2022-05-18T00:00:00.000-00:00"
 ---
 

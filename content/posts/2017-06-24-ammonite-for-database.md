@@ -1,10 +1,11 @@
 ---
 layout: post
 title: SQL Database
-date: '2017-06-24T00:00:00.000-00:00'
+date: "2017-06-24T00:00:00.000-00:00"
 author: Stephen Nancekivell
-tags: 
-modified_time: '2017-06-24T00:00:00.000-00:00'
+tags:
+modified_time: "2017-06-24T00:00:00.000-00:00"
+draft: true
 ---
 
 [Ammonite](http://ammonite.io) is great for those database jobs that are too complicated for SQL alone. This example uses [ScalikeJDBC]("http://scalikejdbc.org/") to update some rows.
@@ -23,7 +24,7 @@ implicit val session = AutoSession
 
 val users =
   sql"""select id, email from users"""
-  .map(rs => rs.long("id") -> rs.string("email")).list.apply() 
+  .map(rs => rs.long("id") -> rs.string("email")).list.apply()
 users: List[(Long, String)] = List((1L, "foo@bar"), (2L, "bar@baz"))
 
 def isNormalised(email: String): Boolean = ???
@@ -35,6 +36,6 @@ usersWithInvalidEmail: List[(Long, String)] = List((1L, "foo@bar"), (2L, "bar@ba
 
 usersWithInvalidEmail.foreach { case (id, email) =>
   val updatedEmail = normaliseEmail(email)
-  sql"""update users set email = ${updatedEmail} where id = ${id};""".update.apply() 
+  sql"""update users set email = ${updatedEmail} where id = ${id};""".update.apply()
 }
 ```

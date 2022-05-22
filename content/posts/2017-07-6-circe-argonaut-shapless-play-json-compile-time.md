@@ -6,8 +6,6 @@ date: "2017-07-06"
 author: Stephen Nancekivell
 tags:
 modified_time: "2017-07-06"
-# redirect_from:
-#   - /2017/07/circe-vs-argonaut-shapless-compile-time
 ---
 
 Slow comile times in scala are a common complaint. This is usually because of advanced usage of implicit resolution and macros. The JSON libraries [ArgonautShapeless](https://github.com/alexarchambault/argonaut-shapeless) for [Argonaut](http://argonaut.io/), [Circe](https://circe.github.io/circe/) and [play-json](https://github.com/playframework/play-json) make heavy use of that. I love the convience this approach provides, and I think its better than manually building codecs. Manually codecs can be error prone because you have to be careful about the position of arguments which may not even be defined in the same file.

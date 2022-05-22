@@ -2,14 +2,22 @@ baseURL: 'https://stephenn.com'
 languageCode: en-us
 title: Stephen's Tech Blog
 theme: PaperMod
+
+enableRobotsTXT: true
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
 defaultContentLanguage: en
 hasCJKLanguage: false
 paginate: 30
-googleAnalytics: your-google-analytics-id
-disqusShortname: your-disqus-shortname
+googleAnalytics: UA-21860813-8
+#disqusShortname: your-disqus-shortname
 permalinks:
   # posts: '/posts/:title/'
   posts: '/:year/:month/:title'
+
 markup:
   highlight:
     guessSyntax: true
@@ -21,7 +29,13 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
 params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  disableThemeToggle: true
+  showReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
   enableRSS: true
   enableComments: false
   enableGoogleAnalytics: true

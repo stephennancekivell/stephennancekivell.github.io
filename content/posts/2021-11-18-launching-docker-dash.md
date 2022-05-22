@@ -6,7 +6,9 @@ date: "2021-11-18T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
 summary: Docker Dash is my new SaaS side project, it helps teams manage the security of their docker containers. This post is about some of the technical decisions I've made while building it.
-image: /assets/2021-11-18-docker-dash-screen.png
+cover:
+  hidden: true
+  image: /assets/2021-11-18-docker-dash-screen.png
 modified_time: "2021-11-18T00:00:00.000-00:00"
 ---
 

@@ -5,7 +5,9 @@ url: "2021/02/how-to-use-pi-as-home-server"
 date: "2021-02-07T00:00:00.000-00:00"
 author: Stephen Nancekivell
 summary: How to use a Raspberry Pi as a home server instead of a VPS
-image: /assets/2021-02-07-pi.jpg
+cover:
+  hidden: true
+  image: /assets/2021-02-07-pi.jpg
 tags:
 modified_time: "2021-02-07T00:00:00.000-00:00"
 ---
