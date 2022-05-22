@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Improve SQL Join Queries that use Temporary Tables & File Sorts
+url: "2021/03/sql-join-queries-temporary-tables"
 date: "2021-03-27T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:

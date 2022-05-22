@@ -1,27 +1,29 @@
 ---
 layout: post
 title: Avoiding Scala Thread Exhaustion in Scalacache
-date: '2018-03-15T00:00:00.000-00:00'
+url: "2018/03/avoiding-scala-thread-exhaustion.html"
+date: "2018-03-15T00:00:00.000-00:00"
 author: Stephen Nancekivell
-tags: 
-modified_time: '2018-03-15T00:00:00.000-00:00'
+tags:
+modified_time: "2018-03-15T00:00:00.000-00:00"
 ---
 
 In this post im going to talk about thread exhaustion of the scala global execution context and a curious case where it came up in a old version of [scalacache](https://github.com/cb372/scalacache). Its classic scala advice that you shouldnt use the default execution context, in this post we will look into detail why. We will look into how it is then avoided in scalacache while maximising code reuse.
 
 ### Background
+
 Use of `Await.ready` starts a new thread on the default execution context, so if that happens enough you can run out of threads. Subsequent use of `Await` can then get into a deadlock. In scala 2.11 `Await` and `blocking` had a unbounded thread pool which could eventually start more threads than the operating system could handle and throw a exception `java.lang.OutOfMemoryError: unable to create new native thread`.
 
 In 2.12 the thread pool is capped to the number of cpu processors. It can be configured with `-Dscala.concurrent.context.maxThreads`.
 
 ### Demonstration
+
 The following [ammonite](https://github.com/lihaoyi/Ammonite) script shows the problem. I've made a simple example that shows real world usage that can experience the problem.
 
 This code starts a single thread to continually execute the memoiszdEcho function which exercises scalacache. The cache duration isnt important. Then it floods the default execution context with up to 10 processes that just sleep, on my computer it maxes out at 8 threads. This starves the default execution context causing the memoized function to stop returning.
 
-
 ```scala
-import $ivy.`com.github.cb372::scalacache-guava:0.9.4` 
+import $ivy.`com.github.cb372::scalacache-guava:0.9.4`
 import java.util.concurrent.Executors
 import com.google.common.cache.CacheBuilder
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
@@ -67,7 +69,6 @@ Thread.sleep(5000) // watch memo run.
   }(scala.concurrent.ExecutionContext.global)
 }
 ```
-
 
 ```
 13:13:06.276 - pool-1-thread-1  - 5    - exerise memo
@@ -128,12 +129,12 @@ adding to default n:10
 
 ```
 
-
 ### This is surprising,
+
 even though `memoiszdEcho` is being called from its own thread in a different pool stops. Its blocked because memoizedSync uses `Await.ready` and the default execution context internally. This is a little bit strange because its a sync api, the guava cache is stored in memory. Whats happening internally to scalacache is they are reusing some async code with `Future.successful` which itself doesnt fork but its then flatMapped with which does.
 
-
 `scalacache/package.scala@0.9.4`
+
 ```scala
 def synchronouslyCacheResult(result: Future[From]): Future[From] = {
   for {
@@ -151,16 +152,17 @@ def synchronouslyCacheResult(result: Future[From]): Future[From] = {
 
 Remember `flatMap` needs a execution context.
 `scala.concurrent.Future`
+
 ```
 def flatMap[S](f: T => Future[S])(implicit executor: ExecutionContext): Future[S]
 ```
 
-
 ### Solved in 0.22.0
+
 This script has the upgraded scalacache which avoids Future and the default execution context.
 
 ```scala
-import $ivy.`com.github.cb372::scalacache-guava:0.22.0` 
+import $ivy.`com.github.cb372::scalacache-guava:0.22.0`
 import java.util.concurrent.Executors
 import com.google.common.cache.CacheBuilder
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
@@ -223,10 +225,10 @@ Future {
 ...
 ```
 
-
 Later versions of scalacache have `modes`, where the monad used or the type of effect is parametric, its not hardcoded to `Future`. This is implemented with a `scalacache/MonadError` where `modes.sync` delegates to `Mode.AsyncForId` in place of `Future.successful` But it can be swapped out to `Future` or `scalaz.concurrent.Task` or `cats.effect`.
 
 `scalacache.AsyncForId@0.20.0`
+
 ```scala
 object AsyncForId extends Async[Id] {
 
@@ -235,8 +237,8 @@ object AsyncForId extends Async[Id] {
   def flatMap[A, B](fa: Id[A])(f: A => Id[B]): Id[B] = f(fa)
 ```
 
-
 ## Conclusion
+
 I think this is a great example of how advanced scala and parametric types can bring elegant solutions and simplify some code. Scalacache can provide a simple consistant interface for many different caching engines efficiently.
 
 ### for more
@@ -246,4 +248,3 @@ I think this is a great example of how advanced scala and parametric types can b
 [https://www.cakesolutions.net/teamblogs/demystifying-the-blocking-construct-in-scala-futures](https://www.cakesolutions.net/teamblogs/demystifying-the-blocking-construct-in-scala-futures)
 
 [https://typelevel.org/cats-effect/](https://typelevel.org/cats-effect/)
-

@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Building a work queue with Scala & FS2
-date: '2020-09-12T00:00:00.000-00:00'
+url: "2020/09/fs2-work-manager"
+date: "2020-09-12T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
-modified_time: '2020-09-12T00:00:00.000-00:00'
+modified_time: "2020-09-12T00:00:00.000-00:00"
 ---
 
 I've recently improved the csv parsing in my side project [Real Email](https://isitarealemail.com) and built a work queue using [FS2](https://fs2.io). In this post I will explain how to build a work queue with cancellation.
@@ -52,4 +53,3 @@ class WorkManager(
       .drain
 }
 ```
-

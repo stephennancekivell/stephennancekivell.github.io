@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Simplifying Go Concurrency with Futures
+url: "2022/05/simplifying-go-concurrency-with-future"
 date: "2022-05-17T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:

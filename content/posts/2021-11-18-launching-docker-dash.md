@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building Docker Dash - Technical Decisions
+url: "2021/11/launching-docker-dash"
 date: "2021-11-18T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:

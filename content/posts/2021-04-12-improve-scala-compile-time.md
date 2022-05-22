@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to Improve your Scala Compilation Times
+url: "2021/04/improve-scala-compile-time"
 date: "2021-04-12T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
