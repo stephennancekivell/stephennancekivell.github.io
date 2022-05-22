@@ -25,3 +25,8 @@
 .home-info {
     min-height: initial;
 }
+
+
+nav.nav {
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+}
