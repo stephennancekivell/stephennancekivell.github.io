@@ -283,16 +283,6 @@ So I&#39;ve turned the 5minute job of logging in and applying the update into a 
     </item>
     
     <item>
-      <title>Awful UI from ASB</title>
-      <link>https://stephenn.com/2013/04/awful-ui-from-asb/</link>
-      <pubDate>Thu, 25 Apr 2013 05:20:00 -0700</pubDate>
-      
-      <guid>https://stephenn.com/2013/04/awful-ui-from-asb/</guid>
-      <description>TL;DR ASB bank made their own input field masker and it&amp;nbsp;doesn&#39;t&amp;nbsp;handle copy and paste.
-So bank with ASB, and when I want to use my money by doing a online bank transfer I have to type in the recipients account number. This is bull shit. I have to TYPE their account number. I cant copy and paste it. Those account numbers are long, 15 digits long, like im going to remember it.</description>
-    </item>
-    
-    <item>
       <title>How I Sync to my mac to my android</title>
       <link>https://stephenn.com/2013/01/how-i-sync-to-my-mac-to-my-android/</link>
       <pubDate>Sun, 27 Jan 2013 03:06:00 -0800</pubDate>
@@ -493,29 +483,6 @@ But on servers we never log in to get those notifications, as long as things kee
       <description>I&#39;ve been looking at ways to organize a document set. Im particularly interested in comparing and clustering documents based on their content. In these experiments a test set of Wikipedia documents, most of the documents come from a keyword search about fish with some random ones to mix it up.
 
 For comparing these documents I’ve used the categories taken from wikipedia and mined the important words. Each document can belong to multiple categories.</description>
-    </item>
-    
-    <item>
-      <title>Where the google visualization library sucks.</title>
-      <link>https://stephenn.com/2011/05/where-google-visualization-library/</link>
-      <pubDate>Tue, 10 May 2011 03:39:00 -0700</pubDate>
-      
-      <guid>https://stephenn.com/2011/05/where-google-visualization-library/</guid>
-      <description>If ya haven&#39;t checked out google charts&amp;nbsp;check them out, there pretty good.
-So you want to graph some stuff, but you dont have data for every point on the X axis, what do ya do.&amp;nbsp;You dont do this. Its wrong. The distance between 1997 - 2005 is the same as between 2005 - 2006, giving different meaning to the graph
-
-
-So what can ya do to get around it.</description>
-    </item>
-    
-    <item>
-      <title>quicky on word clouds</title>
-      <link>https://stephenn.com/2011/05/quicky-on-word-clouds/</link>
-      <pubDate>Fri, 06 May 2011 07:12:00 -0700</pubDate>
-      
-      <guid>https://stephenn.com/2011/05/quicky-on-word-clouds/</guid>
-      <description>For some crazy reason (uni) I thought I&#39;d look at browsing and comparing text files using word clouds. Browsing or searching a set of files for particular subject matter.
-User would be presented a word cloud of all the words in all the files.User then clicks on the word that relates to the subject there after.The set of files is then filtered to contain with the filter selected word.If there are still too many documents in the set&amp;nbsp;repeat&amp;nbsp;from step 1.</description>
     </item>
     
     <item>
