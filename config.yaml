@@ -21,7 +21,8 @@ permalinks:
 markup:
   highlight:
     guessSyntax: true
-    style: emacs
+    # style: emacs
+    style: dracula
   tableOfContents:
     endLevel: 3
     ordered: false
