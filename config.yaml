@@ -32,7 +32,7 @@ markup:
       unsafe: true
 
 params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  # env: production # to enable google analytics, opengraph, twitter-cards and schema.
   disableThemeToggle: true
   showReadingTime: true
   ShowShareButtons: true
