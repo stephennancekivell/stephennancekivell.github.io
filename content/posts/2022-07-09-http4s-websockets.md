@@ -34,7 +34,7 @@ def routes(ws: WebSocketBuilder2[IO]): HttpRoutes[IO] =
     }
 ```
 
-Then in a web client, you can subscribe to the websocket like this.
+Then in a JavaScript client, you can subscribe to the Web Socket like this.
 
 ```js
 const socket = new WebSocket("ws://localhost:8080/ws");
