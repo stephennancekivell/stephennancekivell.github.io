@@ -5,7 +5,7 @@ url: "2022/07/web-sockets-with-http4s"
 date: "2022-07-09T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
-# summary: Concurrency in golang can get tricky, now that generics have landed a Future library can help.
+summary: Using Web Sockets, Http4s and FS2 are a great way to send streaming data to a client...
 # cover:
 # #   image: /assets/2022-05-17-undraw_Software_engineer_re_tnjc.png
 #   hidden: true
