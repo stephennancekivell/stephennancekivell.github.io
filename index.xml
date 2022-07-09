@@ -6,7 +6,18 @@
     <description>Recent content on Stephen&#39;s Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Serve Web Sockets with Http4s</title>
+      <link>https://stephenn.com/2022/07/web-sockets-with-http4s/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2022/07/web-sockets-with-http4s/</guid>
+      <description>Web Sockets are a great way to stream data from a server to a client. Http4s is a fantastic http server for Scala.
+The trick to serving Web Sockets with Http4s is that you need to get hold of WebSocketBuilder2 before you can make the HttpRoutes. You get the WebSocketBuilder by using withHttpWebSocketApp on the ServerBuilder your using.
+For example you to serve websocket data on /ws you could have a routes function like this.</description>
+    </item>
+    
     <item>
       <title>Simplifying Go Concurrency with Futures</title>
       <link>https://stephenn.com/2022/05/simplifying-go-concurrency-with-future/</link>
@@ -133,8 +144,7 @@ Background Use of Await.ready starts a new thread on the default execution conte
       <pubDate>Sat, 07 Mar 2015 23:46:00 -0800</pubDate>
       
       <guid>https://stephenn.com/2015/03/how-to-examine-and-optimise-locking-in/</guid>
-      <description>Consider the following queries, each will lock the database in different ways. In this post Im going to show you how you see where each one is locking, and how to optimise it.update TabFoo set bla = ‘bla’ where id = 1; update TabFoo set bla = ‘bla’ where foo = ‘bla&#39;; 
-To see the locks in MySQL innodb, start a transaction run the query, then inspect the innodb status.</description>
+      <description>Consider the following queries, each will lock the database in different ways. In this post Im going to show you how you see where each one is locking, and how to optimise it. update TabFoo set bla = ‘bla’ where id = 1; update TabFoo set bla = ‘bla’ where foo = ‘bla&#39;; To see the locks in MySQL innodb, start a transaction run the query, then inspect the innodb status.</description>
     </item>
     
     <item>
@@ -155,7 +165,6 @@ The angular controller as syntax&amp;nbsp;looks like this.. ng-controller=“MyC
       <guid>https://stephenn.com/2014/12/scala-testing-techniques/</guid>
       <description>This post is about some of the different ways we can test our scala code. I think this is a bit of an overlooked subject, you don’t see too many scala tutorials that show you how you should test and its often quite different. At the surface this seems pretty basic, but like most code there are lots of ways to do it.
 No mocking
-
 You could test something by running it, and checking that it does what it should.</description>
     </item>
     
@@ -245,7 +254,6 @@ For example if I do this with 2500 docs. It takes a while to render and slows th
       
       <guid>https://stephenn.com/2013/12/searchbrewcom/</guid>
       <description>I made this website the other day.&amp;nbsp;searchbrew.com&amp;nbsp;This article about how I made it.
-
 Its a search for hombrew packages. Brew by itself doesnt have a very good search, because they dont want to collect description metadata about packages. Brew does have a link to the homepage of each package. I tried getting descriptions and indexing the homepage for search, but it didnt work very well. Then I came across this project&amp;nbsp;telemachus/homebrew-desc&amp;nbsp;which includes project descriptions.</description>
     </item>
     
@@ -308,7 +316,7 @@ I havent found anything like this yet for javascript / angular.js but its easy t
       <pubDate>Sun, 20 Jan 2013 22:58:00 -0800</pubDate>
       
       <guid>https://stephenn.com/2013/01/one-click-deploy-and-rollback-from-shell/</guid>
-      <description> Heres how I auto deploy my app, and how i roll back if something goes wrong.
+      <description>Heres how I auto deploy my app, and how i roll back if something goes wrong.
 sh scripts/deploy.sh deploy
 sh scripts/deploy.sh deploy rollback
 It couldnt be easier.
@@ -330,7 +338,7 @@ cd dist
 tar -czf ../dist.tgz *
 cd ..
 echo &#34;backing up&#34;
-ssh $TARGET </description>
+ssh $TARGET &lt;&lt; EOF</description>
     </item>
     
     <item>
@@ -341,7 +349,6 @@ ssh $TARGET </description>
       <guid>https://stephenn.com/2013/01/dont-make-me-think/</guid>
       <description>Part of my app requires extracting a date from the line of text. To do this I use a regular expression to pick the substring that has the date, then use a date format to parse it.
 Heres a screen shot my first version of getting that information. The user inputs both the regex and the date format.
-
 After a while it became clear to me that the regex could be derived from the date format.</description>
     </item>
     
@@ -367,9 +374,8 @@ An Angular.js app has 3 main parts.
       <guid>https://stephenn.com/2012/07/earthquake-data/</guid>
       <description>I was in my first big earthquake the other day. Being my first I&amp;nbsp;didn&#39;t&amp;nbsp;know if it felt like a big one or not. I jumped on geonet.org.nz looking for the answer.
 GeoNet have this awesome heat map of earthquakes around NZ
-
 I thought it&#39;d be cool to make a video of it. To show how that changed over time. So I did.
-  Unfortunately I&#39;ve only got the aftermath.</description>
+Unfortunately I&#39;ve only got the aftermath. But I&#39;m sussed to make cool videos next time.</description>
     </item>
     
     <item>
@@ -379,9 +385,9 @@ I thought it&#39;d be cool to make a video of it. To show how that changed over 
       
       <guid>https://stephenn.com/2012/06/how-2degrees-messed-up-their-website/</guid>
       <description>When on a small screen, the 2degrees site puts some of the content to the left of screen where you can’t see or click it. I noticed this on my smart phone when trying to top up.
- Here what It looks like on my desktop.
- 
-Notice the important “Top Up” button in the navigation menu on the left. This cannot be clicked on my phone.</description>
+Here what It looks like on my desktop.
+Notice the important “Top Up” button in the navigation menu on the left. This cannot be clicked on my phone.
+The web page is made with a main div that is the first thing in the body of the html who’s job is to center the content.</description>
     </item>
     
     <item>
@@ -391,7 +397,8 @@ Notice the important “Top Up” button in the navigation menu on the left. Thi
       
       <guid>https://stephenn.com/2012/05/working-hours-graph-life-logger/</guid>
       <description>I’ve been using Life Logger to track how long I spend at work. It has a pretty rudimentary way to get summaries from it. I wanted to see a graph of how long I’ve spent at work in a graph so I exported the database and made my own.
-Here’s what I Came Up With.If my boss sees this, its all those public holidays that bring those hours down.</description>
+Here’s what I Came Up With.
+If my boss sees this, its all those public holidays that bring those hours down.</description>
     </item>
     
     <item>
@@ -422,13 +429,10 @@ Apr 14 10:29:41 stephen-ThinkPad-T520 kernel: [170037.</description>
       
       <guid>https://stephenn.com/2012/03/how-to-find-open-source-project-to-work/</guid>
       <description>You can search for popular projects that have TODO notes in the source code
-
 To search for popular projects execute this search query for repositories.
 followers:[1 TO *] followers:[1 TO *] If you judge popularity by the number of followers.
-
 To search for the TODO notes in that repo execute this search query for code.
 TODO repo:django/django
-
 Because the code is indexed differently to the repository there is no direct relationship from the code to the repositories followers.</description>
     </item>
     
@@ -481,7 +485,6 @@ But on servers we never log in to get those notifications, as long as things kee
       
       <guid>https://stephenn.com/2011/06/document-browsing-and-comparison/</guid>
       <description>I&#39;ve been looking at ways to organize a document set. Im particularly interested in comparing and clustering documents based on their content. In these experiments a test set of Wikipedia documents, most of the documents come from a keyword search about fish with some random ones to mix it up.
-
 For comparing these documents I’ve used the categories taken from wikipedia and mined the important words. Each document can belong to multiple categories.</description>
     </item>
     
