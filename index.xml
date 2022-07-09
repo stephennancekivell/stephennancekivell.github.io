@@ -13,9 +13,7 @@
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://stephenn.com/2022/07/web-sockets-with-http4s/</guid>
-      <description>Web Sockets are a great way to stream data from a server to a client. Http4s is a fantastic http server for Scala.
-The trick to serving Web Sockets with Http4s is that you need to get hold of WebSocketBuilder2 before you can make the HttpRoutes. You get the WebSocketBuilder by using withHttpWebSocketApp on the ServerBuilder your using.
-Then you can serve or receive data as FS2 Streams of Stream[IO, WebSocketFrame] with all the power and flexibility they offer.</description>
+      <description>Using Web Sockets, Http4s and FS2 are a great way to send streaming data to a client&amp;hellip;</description>
     </item>
     
     <item>
