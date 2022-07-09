@@ -16,6 +16,8 @@ modified_time: "2022-07-09T00:00:00.000-00:00"
 
 The trick to serving Web Sockets with Http4s is that you need to get hold of `WebSocketBuilder2` before you can make the `HttpRoutes`. You get the WebSocketBuilder by using `withHttpWebSocketApp` on the `ServerBuilder` your using.
 
+Then you can serve or receive data as [FS2 Streams](https://fs2.io) of `Stream[IO, WebSocketFrame]` with all the power and flexibility they offer.
+
 For example you to serve websocket data on `/ws` you could have a `routes` function like this.
 
 ```scala
