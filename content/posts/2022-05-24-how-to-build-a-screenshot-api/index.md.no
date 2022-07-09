@@ -1,0 +1,107 @@
+---
+layout: post
+title: Designing a screenshot or PDF api
+# url: "2022/05/simplifying-go-concurrency-with-future"
+date: "2022-05-17T00:00:00.000-00:00"
+author: Stephen Nancekivell
+tags:
+# summary: Concurrency in golang can get tricky, now that generics have landed a Future library can help.
+cover:
+  #   image: /assets/2022-05-17-undraw_Software_engineer_re_tnjc.png
+  hidden: true
+modified_time: "2022-05-24T00:00:00.000-00:00"
+---
+
+Sometimes when building apps you need to generate screenshots or pdfs of web pages, they can be used as reports, receipts and are easy to email. [Puppeteer](https://github.com/puppeteer/puppeteer) and headless browsers have made this much easier in recent years, but sometimes its tricky to know exactly how to use and design an your API so that its easy to use, flexible and reliable.
+
+This article is about how to design your API and the pages so you get the most out of it first try.
+
+<div style="max-height: 400px;">
+<svg viewBox="0 0 1201.2 400.6"><rect width="1201.2" height="400.6" fill="#ffd8d8" id="bg" class="bg"></rect><g><g transform="translate(210.21,
+                                10.01) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect x="35.333" y="35.333" width="64.667" height="64.667" fill="#F18701"></rect><rect x="3" y="3" width="64.667" height="64.667" fill="none" stroke="#936FB3" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></rect></svg></g><g transform="translate(10.01,
+                                210.21) rotate(270, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect y="26.067" width="68.785" height="68.785" fill="#F7B801"></rect><circle cx="68.785" cy="33.363" r="28.215" fill="none" stroke="#E75580" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></circle></svg></g><g transform="translate(610.61,
+                                10.01) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><polygon points="9.405 61.088 90.595 61.088 50 3 9.405 61.088" fill="none" stroke="#3A16FB" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></polygon><polygon points="9.405 100 90.595 100 50 41.912 9.405 100" fill="#562DF6"></polygon></svg></g><g transform="translate(410.41,
+                                210.21) rotate(270, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect y="26.067" width="68.785" height="68.785" fill="#F7B801"></rect><circle cx="68.785" cy="33.363" r="28.215" fill="none" stroke="#E75580" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></circle></svg></g><g transform="translate(1011.01,
+                                10.01) rotate(180, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect y="26.067" width="68.785" height="68.785" fill="#F7B801"></rect><circle cx="68.785" cy="33.363" r="28.215" fill="none" stroke="#E75580" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></circle></svg></g><g transform="translate(810.81,
+                                210.21) rotate(180, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect y="26.067" width="68.785" height="68.785" fill="#F7B801"></rect><circle cx="68.785" cy="33.363" r="28.215" fill="none" stroke="#E75580" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></circle></svg></g></g><g><g transform="translate(210.21,
+                                410.41) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><polygon points="9.405 61.088 90.595 61.088 50 3 9.405 61.088" fill="none" stroke="#3A16FB" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></polygon><polygon points="9.405 100 90.595 100 50 41.912 9.405 100" fill="#562DF6"></polygon></svg></g><g transform="translate(10.01,
+                                610.61) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect y="26.067" width="68.785" height="68.785" fill="#F7B801"></rect><circle cx="68.785" cy="33.363" r="28.215" fill="none" stroke="#E75580" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></circle></svg></g><g transform="translate(610.61,
+                                410.41) rotate(0, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect x="35.333" y="35.333" width="64.667" height="64.667" fill="#F18701"></rect><rect x="3" y="3" width="64.667" height="64.667" fill="none" stroke="#936FB3" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></rect></svg></g><g transform="translate(410.41,
+                                610.61) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect y="26.067" width="68.785" height="68.785" fill="#F7B801"></rect><circle cx="68.785" cy="33.363" r="28.215" fill="none" stroke="#E75580" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></circle></svg></g><g transform="translate(610.61,
+                                610.61) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect x="35.333" y="35.333" width="64.667" height="64.667" fill="#F18701"></rect><rect x="3" y="3" width="64.667" height="64.667" fill="none" stroke="#936FB3" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></rect></svg></g><g transform="translate(1011.01,
+                                410.41) rotate(180, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect x="35.333" y="35.333" width="64.667" height="64.667" fill="#F18701"></rect><rect x="3" y="3" width="64.667" height="64.667" fill="none" stroke="#936FB3" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></rect></svg></g><g transform="translate(810.81,
+                                610.61) rotate(90, 90.09, 90.09)"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 100 100" width="180.18" height="180.18"><rect x="35.333" y="35.333" width="64.667" height="64.667" fill="#F18701"></rect><rect x="3" y="3" width="64.667" height="64.667" fill="none" stroke="#936FB3" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></rect></svg></g></g></svg>
+</div>
+
+# Build or Buy? 🤷‍♀️
+
+There are lots of options for screenshot and pdf API's, you can use a managed SaaS product or host an open source image or build your own.
+
+### A Managed Offering comes with...
+
+- faster time to get started
+- higher usage costs, although depending on your volume it could easily save you more time.
+- possible data privacy issues.
+
+### Host your own docker
+
+- a bit more time to get started, you have to run the docker image somewhere.
+- higher maintanence and server time, although if you already have a docker or kubernetes cluster this can be small. Or it could be run on demand with AWS lambda or GPC cloud run
+- higher patching maintance
+- no data privacy issues
+
+### Build your own
+
+- more flexability
+- even more time to get started, you have to build the docker image.
+- the same hosting concerns
+- no data privacy issues
+
+# Designing your usage
+
+How you need to use the generated images or pdf's will impact your api design. If you want the API files to be generated on the fly and served directly from your API you will want a pass through API. If you need the files to be generated once then downloaded you will need a download API.
+
+Either way there will be a number of common options about how to render the page. What query parameters to send, how to wait for the page to finish loading, any custom rendering css to apply.
+
+## pass through API
+
+http://example.com/sheetshot?\
+url=reddit.com&\
+ waitTime=500ms&\
+ body:{max-width:800px}
+
+## How to customise the page rendering
+
+Its common when rendering pages for PDF's on screenshots to what to change how they look. You might need to hide navbars and buttons or add watermarks. But its not always easy.
+
+- Use a different page
+- inject css
+- inject javascript
+
+Using a different page can be simplest, but tricky if its part of a platform under active development. Be sure to share code if possible. If thats not possible
+
+You can also use print css selectors `@media print {}` to have rules to customise how it looks.
+
+As part of your API you could include css rules, for example to hide the nav bar you might add `.nav{display:none}`
+
+or as part of injected javascript you could run `document.querySelector(".nav").remove()`.
+
+In puppeteer these would be executed with.
+
+`await page.addStyleTag({content: 'body{background: skyblue}'})`
+
+or
+
+```
+await page.evaluate(() => {
+  document.querySelector(".nav").remove()
+});
+```
+
+## How to reliably wait for the page to load.
+
+Puppeteer comes with a few page load options built in `waitUntil`, but it often wont work as expected. This is particularly difficuilt for dynamic pages. You can also execute custom javascript within the page. Consider using javascript and looking for loading icons.
+
+- page load options,
+- dynamic content. wait with CSS loading icon selector, wait with js notification.
+- & waiting for custom js to apply
