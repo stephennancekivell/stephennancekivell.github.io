@@ -12,7 +12,7 @@ minify:
 defaultContentLanguage: en
 hasCJKLanguage: false
 paginate: 30
-googleAnalytics: UA-21860813-8
+googleAnalytics: G-LNCP0VXVCC
 #disqusShortname: your-disqus-shortname
 permalinks:
   # posts: '/posts/:title/'
