@@ -52,9 +52,11 @@ params:
 
       - [Webhook Wizard 🧙‍♂️](https://webhookwizard.com)
 
+      - [Person App](https://personapp.co)
+
       - [Docker Dash](https://dockerdash.com)
 
-      - Sold [RealEmail](https://IsItARealEmail.com)
+      - [RealEmail](https://IsItARealEmail.com) (sold)
 
   socialIcons:
       - name: github
@@ -64,7 +66,7 @@ params:
       - name: linkedin
         url: "https://www.linkedin.com/in/stephen-nancekivell-77003039"
       - name: stackoverflow
-        url: 893854/stephen
+        url: "https://stackoverflow.com/users/893854/stephen"
 
 menu:
     main:
