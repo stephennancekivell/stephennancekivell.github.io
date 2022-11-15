@@ -85,7 +85,7 @@ My change was as simple as removing the `generic.auto._` import from `AppContext
 
 With this change, the compile time for those files comes down from 1 second to about 100ms. For the small cost of adding some boilerplate, we gained considerable compiler speed.
 
-I was able to apply the same optimization to my [Circe](circe.io) JSON codecs and bring the total compilation time down from 12 to 7 seconds. So that's a 40% 💪 time saving with just a little bit of simple refactoring.
+I was able to apply the same optimization to my [Circe](https://circe.io) JSON codecs and bring the total compilation time down from 12 to 7 seconds. So that's a 40% 💪 time saving with just a little bit of simple refactoring.
 
 ![IntelliJ IDEA Complication Chart](/assets/2021-04-12-compiling-zoom-2.png)
 
