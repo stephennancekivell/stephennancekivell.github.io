@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://stephenn.com/2023/06/gopher-wrangling.-effective-error-handling-in-go/</loc>
+    <lastmod>2023-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://stephenn.com/posts/</loc>
+    <lastmod>2023-06-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://stephenn.com/</loc>
+    <lastmod>2023-06-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://stephenn.com/tweets/</loc>
     <lastmod>2022-11-12T12:00:00+10:00</lastmod>
   </url><url>
     <loc>https://stephenn.com/2022/07/web-sockets-with-http4s/</loc>
-    <lastmod>2022-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://stephenn.com/posts/</loc>
-    <lastmod>2022-07-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://stephenn.com/</loc>
     <lastmod>2022-07-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://stephenn.com/2022/05/simplifying-go-concurrency-with-future/</loc>

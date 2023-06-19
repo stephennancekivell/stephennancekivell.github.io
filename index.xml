@@ -6,7 +6,17 @@
     <description>Recent content on Stephen&#39;s Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gopher Wrangling. Effective error handling in Go</title>
+      <link>https://stephenn.com/2023/06/gopher-wrangling.-effective-error-handling-in-go/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2023/06/gopher-wrangling.-effective-error-handling-in-go/</guid>
+      <description>When programming in Go, the amount of error handling is something that slaps you in the face. Most API&amp;rsquo;s you deal with will expose errors. It can become overwhelming, but with a few tips and a guiding principle we can make handling errors easy, keep our code clean and give you the confidence that nothing is breaking in production.
+A cartoon of a crazy stressed programmer pulling their hair out in front of lots of screens showing a error exclamation marks</description>
+    </item>
+    
     <item>
       <title>Twitter Timeline</title>
       <link>https://stephenn.com/tweets/</link>
