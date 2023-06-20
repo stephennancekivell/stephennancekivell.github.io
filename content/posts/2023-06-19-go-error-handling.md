@@ -5,19 +5,21 @@ date: "2023-06-19T00:00:00.000-00:00"
 author: Stephen Nancekivell
 tags:
 cover:
-  image: /assets/2023-06-gopher-wrangling-go-errors.png
+  image: /assets/2023-06-gopher-wrangling-go-errors.jpg
   hidden: true
 ---
 
 When programming in Go, the amount of error handling is something that slaps you in the face. Most API's you deal with will expose errors. It can become overwhelming, but with a few tips and a guiding principle we can make handling errors easy, keep our code clean and give you the confidence that nothing is breaking in production.
 
-![A cartoon of a crazy stressed programmer pulling their hair out in front of lots of screens showing a error exclamation marks](/assets/2023-06-gopher-wrangling-go-errors.png)
+![A cartoon of a crazy stressed programmer pulling their hair out in front of lots of screens showing a error exclamation marks](/assets/2023-06-gopher-wrangling-go-errors.jpg)
 
 > A cartoon of a crazy stressed programmer pulling their hair out in front of lots of screens showing a error exclamation marks
 
 ### Guiding principle
 
 The goal for our error handling strategy is that it should require minimal effort and provide an easy way to debug any errors that do occur.
+
+We wont cover strategies like retrying because they are less common and also expose errors.
 
 ## 1. Always handle errors
 
