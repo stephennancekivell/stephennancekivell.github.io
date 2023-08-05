@@ -6,7 +6,17 @@
     <description>Recent content on Stephen&#39;s Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Database Transactions in Go: Strategies and Best Practices</title>
+      <link>https://stephenn.com/2023/08/mastering-database-transactions-in-go-strategies-and-best-practices/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2023/08/mastering-database-transactions-in-go-strategies-and-best-practices/</guid>
+      <description>Basics of Database Transactions in Go Before diving into strategies, let&amp;rsquo;s cover the basics of managing database transactions in Go. In Go, transactions are typically managed using the BeginTx function from the database/sql package. The basic flow for a transaction involves acquiring a transaction, performing operations, and then either committing or rolling back the transaction.
+tx, err := db.BeginTx(...) // Perform database operations _, err := tx.ExecContext(...) if err !</description>
+    </item>
+    
     <item>
       <title>PDFs on the Fly: Programmatically Transforming Webpages into PDFs</title>
       <link>https://stephenn.com/2023/06/pdfs-on-the-fly-programmatically-transforming-webpages-into-pdfs/</link>
