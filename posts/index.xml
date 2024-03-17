@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Stephen&#39;s Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://stephenn.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fast postgres index creation</title>
+      <link>https://stephenn.com/2024/03/fast-postgres-index-creation/</link>
+      <pubDate>Sun, 17 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://stephenn.com/2024/03/fast-postgres-index-creation/</guid>
+      <description>Fast postgres index creation Postgres is a fantastic database for a multitude of reasons, celebrated for its reliability and flexibility. However, when creating indexes on large tables, it can sometimes feel sluggish. This becomes even more noticeable when your project requires the creation of numerous indexes, potentially slowing down your progress.
+Configure CPU and RAM available for index creation There are two settings that control the amount of server resources available for index creation, maintenance_work_mem and max_parallel_maintenance_workers.</description>
+    </item>
+    
     <item>
       <title>Mastering Database Transactions in Go: Strategies and Best Practices</title>
       <link>https://stephenn.com/2023/08/mastering-database-transactions-in-go-strategies-and-best-practices/</link>
